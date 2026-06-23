@@ -11,34 +11,13 @@ import { Sidebar } from './shared/sidebar/sidebar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-
+import { FloatingButton } from './floating-button/floating-button';
+import { Captcha } from './captcha/captcha';
 
 @NgModule({
-<<<<<<< HEAD
-  declarations: [App, Footer],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [App, HeaderTop, Navbar, Sidebar, Footer, FloatingButton, Captcha],
+  imports: [BrowserModule, AppRoutingModule, MatToolbarModule, MatButtonModule, MatIconModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
-=======
-  declarations: [
-    App,
-    HeaderTop,
-    Navbar,
-    Sidebar,
-    
-
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule
-  ],
-  providers: [
-    provideBrowserGlobalErrorListeners(),
-  ],
-  bootstrap: [App]
->>>>>>> origin/viewWareHouse
 })
 export class AppModule {}
