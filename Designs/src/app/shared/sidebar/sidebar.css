@@ -1,21 +1,26 @@
 .frame{
-    display: flex;
-width: 1440px;
-height: 939px;
+   display: flex;
+/* width: 1440px;
+height: 939px; */
+
+ min-height: 100vh;
 padding-right: var(--Global-spacing-8xl, 80px);
 align-items: flex-start;
 gap: var(--Global-spacing-5xl, 40px);
+
 }
 
 
 
 .nav-drawer{
  display: flex;
-width: 140px;
-height: 939px;
-padding-right: var(--Global-spacing-8xl, 80px);
+width: 327px;
+flex-direction: column;
 align-items: flex-start;
-gap: var(--Global-spacing-5xl, 40px);
+flex-shrink: 0;
+align-self: stretch;
+
+
 }
 
 .user-section{
@@ -26,6 +31,7 @@ align-items: flex-end;
 align-self: stretch;
 border-right: 1px solid var(--Border-border-neutral-primary, #D2D6DB);
 background: var(--Background-background-neutral-50, #F9FAFB);
+
 }
 
 .info-container{
@@ -35,6 +41,8 @@ gap: 12px;
 align-self: stretch;
 border-right: 1px solid var(--Border-border-neutral-primary, #D2D6DB);
 background: var(--Background-background-neutral-50, #F9FAFB);
+border-right:none;
+
 
 
 }
@@ -46,6 +54,7 @@ justify-content: center;
 align-items: flex-start;
 gap: var(--Global-spacing-md, 8px);
 flex: 1 0 0;
+
 
 }
 .postioned{
@@ -59,6 +68,7 @@ right: 14px;
 top: 11px;
 border-radius: 8px;
 background: var(--Tag-tag-background-error, #D92D20);
+border: 1px solid purple;
 }
 
 .postioned-text{
@@ -213,8 +223,19 @@ background: var(--Tag-tag-background-error, #D92D20);
     display: flex;
 flex-direction: column;
 align-items: flex-start;
-gap: 8px;
+gap: 12px;
 align-self: stretch;
+
+
+}
+
+.border{
+    width: 1px;
+height: 939px;
+position: absolute;
+right: 76%;
+background: var(--Border-border-primary, #D2D6DB);
+display: none;
 
 }
 
@@ -227,6 +248,7 @@ gap: var(--spacing-md, 8px);
 align-self: stretch;
 border-radius: var(--radius-sm, 4px);
 /* width: fit-content; */
+
 
 
 width: 85%;
@@ -367,6 +389,7 @@ height: 456px;
 position: absolute;
 right: 0;
 background: var(--Border-border-neutral-primary, #D2D6DB);
+display: none;
 }
 
 .drawer-items{
@@ -710,14 +733,15 @@ flex: 1 0 0;
 
 .side-bar-scroll-bar{
     display: flex;
-width: 16px;
+width: 12px;
 height: 456px;
 padding: 0 var(--spacing-xs, 4px);
 justify-content: center;
 align-items: flex-start;
 gap: 8px;
 position: absolute;
-right: 0;
+top: 63%;
+right: 75.46%;
 }
 
 .side-bar-rectangle{
@@ -733,12 +757,14 @@ mix-blend-mode: multiply;
 /* main-frame-content */
 
 .main-frame{
-    display: flex;
+display: flex;
 padding: var(--Global-spacing-5xl, 40px) var(--Global-spacing-none, 0);
 flex-direction: column;
 align-items: flex-start;
 gap: var(--Global-spacing-4xl, 32px);
 flex: 1 0 0;
+
+min-width: 0;
 }
 
 
