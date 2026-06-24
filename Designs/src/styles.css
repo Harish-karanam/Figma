@@ -311,3 +311,263 @@ position: absolute;
 right: 8px;
 bottom: 726px; 
 }
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap');
+
+/* header css starts */
+
+.outer-part {
+display: flex;
+justify-content: space-between;
+align-items: center;
+  /* height: 2px; */
+  height: 40px;
+  /* width: 1280px; */
+  width: 100%;
+flex: 1 0 0;
+
+background: var(--Border-border-neutral-primary, #D2D6DB);
+
+
+}
+
+.left-button-1{
+  margin-right:20px;
+}
+
+.all-buttons-left{
+  display: flex;
+  align-items: center;
+}
+
+.left-button-1,.left-button-2{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.inner-1,.inner-2{
+display: flex;
+/* width: 1440px; */
+height: 40px;
+padding: 0 var(--spacing-4xl, 32px);
+flex-direction: row;
+justify-content: center;
+/* align-items: flex-end; */
+align-items: center;
+gap: 24px;
+background: var(--Background-background-neutral-100, #F3F4F6);
+
+}
+
+.inner-1{
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.inner-2{
+  flex: 1;
+  justify-content: flex-end;
+ 
+  display: flex;
+    padding-right: 69px;
+  
+}
+
+.all-buttons-right{
+  display: flex;
+  flex-direction: row;
+/* justify-content: flex-end; */
+justify-content: center;
+align-items: center;
+gap: 16px;
+width: 32px;
+height: 4px;
+padding: 0 32px;
+
+}
+
+.button-1,
+.button-2,
+.button-3,
+.button-4,
+.button-5{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 17.917px;
+  fill: var(--Icon-icon-default, #161616);
+}
+
+
+
+.button-1{
+  width: 12.917px;
+}
+
+.button-2{
+  width: 14.583px;
+}
+
+.button-3{
+  width: 18.125px;
+
+}
+.button-4{
+  width: 18.125px;
+}
+
+.button-5{
+  width: 17.917px;
+}
+
+
+.left-section,
+.right-section {
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--Global-spacing-xl, 16px);
+  flex: 1 0 0;
+  /* gap: 8px;  */
+
+  /* display: flex;
+align-items: center;
+justify-content: center;
+gap: var(--Global-spacing-xl, 16px);
+flex: 1 0 0; */
+}
+
+.icon-content,.contact-content,.language-content{
+  display: flex;
+  align-items: center;
+ 
+}
+
+
+.contact-content{
+  color:  var(--Text-text-primary-paragraph, #384250);
+  font-family: "IBM Plex Sans Arabic";
+  font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 150% */
+}
+
+.language-content{
+  color: var(--Text-text-primary-paragraph, #384250);
+
+/* Text md/Regular */
+font-family: "IBM Plex Sans Arabic";
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 150% */
+}
+
+/* header css starts */
+
+/* navbar css  starts*/
+
+.navbar {
+  display: flex;
+  gap: 20px;
+  /* width: 1440px; */
+  align-items: center;
+  /* padding: 15px 20px; */
+  padding: 0 var(--spacing-4xl, 32px);
+  height: 70px;
+
+}
+.target-3{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 12px;
+}
+
+.target-1,.target-2{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 16px;
+}
+
+.icon-icon{
+  width: 21.5px;
+height: 21.5px;
+fill: var(--Icon-icon-default, #161616);
+}
+
+.icon-content{
+  color: var(--Text-text-default, #161616);
+
+/* Text md/Medium */
+font-family: "IBM Plex Sans Arabic";
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 150% */
+}
+
+
+
+.right-icon-icon{
+  display: flex;
+height: 72px;
+min-width: 72px;
+padding: var(--spacing-md, 8px) var(--spacing-xl, 16px);
+justify-content: center;
+align-items: center;
+gap: var(--spacing-xs, 4px);
+}
+
+
+.navbar a {
+  color: black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  
+}
+
+.logo-content{
+  width: 215px;
+height: 47.778px;
+aspect-ratio: 9/2;
+}
+
+.pic-content{
+  width: 20px;
+height: 20px;
+display: flex;
+height: 72px;
+padding: var(--spacing-md, 8px) var(--Tab-horizontal-tab-sm-button-v-padding, 8px);
+justify-content: center;
+align-items: center;
+gap: var(--spacing-xs, 4px);
+}
+
+.text-content{
+  color: var(--Text-text-default, #161616);
+
+/* Text md/Medium */
+font-family: "IBM Plex Sans Arabic";
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 150% */
+
+}
+
+/* navbar css  sends*/
+
+
+
+
+
+

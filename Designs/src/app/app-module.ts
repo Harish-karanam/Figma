@@ -16,6 +16,10 @@ import { Captcha } from './captcha/captcha';
 
 @NgModule({
   declarations: [App, HeaderTop, Navbar, Sidebar, Footer, FloatingButton, Captcha],
+import { MainContent } from './main-content/main-content';
+
+@NgModule({
+  declarations: [App, HeaderTop, Navbar, Sidebar, MainContent],
   imports: [BrowserModule, AppRoutingModule, MatToolbarModule, MatButtonModule, MatIconModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
