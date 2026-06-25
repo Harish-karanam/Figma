@@ -1,5 +1,332 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap');
+<<<<<<< Updated upstream
+=======
+
+
+/* footer css */
+.footer-container {
+  width: 100%;
+  max-width: 1440px;
+  padding: 40px 80px 24px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background: #f4f5f7;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.footer-top {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  flex-wrap: nowrap;
+}
+
+.footer-column {
+  width: 180px;
+  min-width: 180px;
+  flex: 0 0 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer-column.important-links {
+  width: 340px;
+  min-width: 340px;
+  flex: 0 0 340px;
+}
+
+.footer-column.footer-tools {
+  width: 220px;
+  min-width: 220px;
+  flex: 0 0 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.footer-column h4 {
+  width: 100%;
+  margin: 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #d2d6db;
+  color: #161616;
+  font-family: "IBM Plex Sans Arabic", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.footer-column a,
+.footer-column a:visited {
+  color: #384250;
+  text-decoration: none;
+  font-family: "IBM Plex Sans Arabic", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.footer-column.important-links a,
+.footer-column.important-links a:visited {
+  display: inline;
+  color: #384250;
+  text-decoration: none;
+  font-family: "IBM Plex Sans Arabic", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.footer-column.important-links a svg {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  min-width: 13px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.social-media-section,
+.accessibility-section,
+.mobile-app-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.social-icons,
+.accessibility-icons,
+.mobile-app-icons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.footer-icon {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border-radius: 4px;
+  border: 1px solid #d2d6db;
+  background: transparent;
+  cursor: pointer;
+}
+
+.footer-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.footer-icon svg path {
+  fill: #384250;
+}
+
+
+
+.footer-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.copyright-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.copyright-section p {
+  margin: 0;
+  color: #384250;
+  font-family: "IBM Plex Sans Arabic", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.copyright-section p:first-child {
+  font-weight: 600;
+}
+
+.copyright-section p:nth-child(2),
+.copyright-section p:nth-child(3) {
+  font-weight: 400;
+}
+.footer-legal {
+  display: flex;
+  padding: 16px 0;
+  align-items: center;
+  gap: 24px;
+  align-self: stretch;
+}
+
+.links-legal-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  flex: 1 0 0;
+}
+
+.footer-links {
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 16px;
+  align-self: stretch;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  display: flex;
+  padding: 0;
+  align-items: center;
+  gap: 4px;
+
+  color: #384250;
+  font-family: "IBM Plex Sans Arabic",Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+}
+.legal{
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: var(--spacing-md, 8px);
+}
+.legal-caption{
+  display: flex;
+align-items: flex-start;
+color: var(--Text-text-default, #161616);
+
+/* Text sm/Semibold */
+font-family: "IBM Plex Sans Arabic" ,Arial, sans-serif;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 20px; /* 142.857% */
+margin:0
+}
+.extra-list{
+display: flex;
+align-items: flex-start;
+align-content: flex-start;
+gap: 16px;
+align-self: stretch;
+flex-wrap: wrap;
+
+color: var(--Text-text-default, #161616);
+text-align: right;
+
+/* Text sm/Regular */
+font-family: "IBM Plex Sans Arabic",Arial, sans-serif;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px; /* 142.857% */
+
+}
+.vision-logo {
+  width: 78px;
+  height: 52px;
+
+  background: url("assests/vision-logo.png");
+              
+              
+  
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  
+
+ flex-shrink: 0;
+}
+.logos{
+  display: flex;
+width: 270.74px;
+align-items: center;
+gap: var(--spacing-xl, 16px);
+}
+.text-logo{
+  width: 109.629px;
+height: 18.462px;
+flex-shrink: 0;
+}
+.lines-logo{
+  width: 32.615px;
+height: 33.717px;
+flex-shrink: 0;
+}
+.dga{
+  display: flex;
+width: 106px;
+height: 34.932px;
+justify-content: center;
+align-items: center;
+flex-shrink: 0;
+aspect-ratio: 88/29;
+}
+.dga-image{
+width: 106px;
+height: 34.932px;
+flex-shrink: 0;
+background: url("assests/f605e52bda10a5fa78c1f0976e3fdc5da3d92dfa.png");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+}
+.floating{
+  width: 24px;
+  height: 24px;
+  display: flex;
+padding: var(--Global-spacing-2xl, 20px);
+justify-content: center;
+align-items: center;
+gap: 10px;
+position: absolute;
+left: 15px;
+bottom: 722px;
+border-radius: var(--Radius-radius-full, 9999px);
+background: var(--Button-button-background-primary-default, #1B8354);
+top: 110%;
+}
+.dots{
+  width: 24px;
+height: 24px;
+}
+/* .dots{
+  width: 24px;
+height: 24px;
+} */
+.element{
+width: 4.5px;
+height: 19.5px;
+}
+.cap{
+  width: 60px;
+height: 60px;
+position: absolute;
+right: 8px;
+bottom: 726px; 
+top: 110%;
+}
+>>>>>>> Stashed changes
 
 /* header css starts */
 

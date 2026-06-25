@@ -741,7 +741,9 @@ align-items: flex-start;
 gap: 8px;
 position: absolute;
 top: 63%;
-right: 75.46%;
+/* right: 75.46%; */
+right:78%;
+
 }
 
 .side-bar-rectangle{

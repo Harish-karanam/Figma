@@ -1,0 +1,9 @@
+.main2-frame{
+    display: flex;
+width: 1440px;
+height: 939px;
+padding-right: var(--Global-spacing-8xl, 80px);
+align-items: flex-start;
+gap: var(--Global-spacing-5xl, 40px);
+}
+
