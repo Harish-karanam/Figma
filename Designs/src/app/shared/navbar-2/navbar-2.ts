@@ -7,3 +7,4 @@ import { Component } from '@angular/core';
   styleUrl: './navbar-2.css',
 })
 export class Navbar2 {}
+

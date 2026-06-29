@@ -83,11 +83,17 @@
                 </div>
                 <!-- //button -->
 
-                <div class="warehouse-details-button">
+                <div  class="warehouse-details-button"
+     (click)="openPopup()"
+     style="cursor:pointer;"> 
                     <div class="text-wrapper-warehouse-details">
-                        <p class="text-getackhnowledgment">
-                            Get acknowledgment
-                        </p>
+                        <div class="warehouse-details-button" (click)="openPopup()" style="cursor: pointer;">
+  <div class="text-wrapper-warehouse-details">
+    <p class="text-getackhnowledgment">
+      Get acknowledgment
+    </p>
+  </div>
+</div>
                     </div>
                 </div>
 
@@ -98,7 +104,10 @@
 
         </div>
 
-
+<app-acknowledgement-popup
+  *ngIf="showPopup"
+  (closePopup)="closePopup()">
+</app-acknowledgement-popup>
 
 
         <!-- //main-frame starts  -->
