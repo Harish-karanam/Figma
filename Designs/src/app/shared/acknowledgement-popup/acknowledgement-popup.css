@@ -1,0 +1,83 @@
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(16, 24, 40, 0.45);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+.modal {
+    position: relative;
+
+    width: 600px;
+    background: #fff;
+    border-radius: 8px;
+
+    padding: 24px;
+
+    box-shadow: 0 32px 64px -12px rgba(16, 24, 40, 0.14);
+}
+
+.frame {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--Global-spacing-3xl, 24px);
+    align-self: stretch;
+}
+
+.frame-upper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--Global-spacing-md, 8px);
+    align-self: stretch;
+}
+
+.frame-down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--Button-buttons-group-gap, 8px);
+    align-self: stretch;
+}
+
+.model-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--Model-modal-gap, 8px);
+    align-self: stretch;
+}
+
+.title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.tick-icon {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    border-radius: 9999px;
+    background: #F3FCF6;
+}
+
+.button-close {
+    display: flex;
+width: 32px;
+height: 32px;
+justify-content: center;
+align-items: center;
+position: absolute;
+right: -10px;
+top: -10px;
+border-radius: var(--Radius-radius-sm, 4px);
+}

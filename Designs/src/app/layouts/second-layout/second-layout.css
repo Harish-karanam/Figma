@@ -1,0 +1,15 @@
+.layout-framees {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px; /* or 40px, adjust as needed */
+  width: 100%;
+}
+
+app-sidebar-2 {
+  flex-shrink: 0; /* keeps sidebar at its fixed width */
+}
+
+app-warehousedetails {
+  flex: 1; /* takes remaining space */
+  min-width: 0; /* prevents content overflow issues */
+}

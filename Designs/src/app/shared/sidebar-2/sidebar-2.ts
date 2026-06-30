@@ -6,4 +6,16 @@ import { Component } from '@angular/core';
   templateUrl: './sidebar-2.html',
   styleUrl: './sidebar-2.css',
 })
-export class Sidebar2 {}
+
+
+export class Sidebar2 {
+  showPopup = false;
+
+openPopup() {
+  this.showPopup = true;
+}
+
+closePopup() {
+  this.showPopup = false;
+}
+}
