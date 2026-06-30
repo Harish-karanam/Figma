@@ -94,6 +94,7 @@ import { Navbar2 } from './shared/navbar-2/navbar-2';
 import { MainLayout } from './layouts/main-layout/main-layout';
 import { SecondLayout } from './layouts/second-layout/second-layout';
 import { Sidebar2 } from './shared/sidebar-2/sidebar-2';
+import { Warehousedetails } from './warehousedetails/warehousedetails';
 
 @NgModule({
   declarations: [
@@ -109,6 +110,7 @@ import { Sidebar2 } from './shared/sidebar-2/sidebar-2';
     MainLayout,
     SecondLayout,
     Sidebar2,
+    Warehousedetails,
   ],
   imports: [BrowserModule, AppRoutingModule, MatToolbarModule, MatButtonModule, MatIconModule],
   providers: [provideBrowserGlobalErrorListeners()],
