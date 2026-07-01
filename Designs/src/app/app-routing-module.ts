@@ -7,6 +7,11 @@ import { Navbar2 } from './shared/navbar-2/navbar-2';
 import { MainLayout } from './layouts/main-layout/main-layout';
 import { SecondLayout } from './layouts/second-layout/second-layout';
 import { Sidebar2 } from './shared/sidebar-2/sidebar-2';
+
+import { Warehousedetails } from './warehousedetails/warehousedetails';
+import { ThirdLayout } from './layouts/third-layout/third-layout';
+import { BenefitService } from './benefit-service/benefit-service';
+
 // const routes: Routes = [
 //   {
 //     path:'',
@@ -86,8 +91,8 @@ const routes: Routes = [
     component: SecondLayout,
     children: [
       {
-        path: '',
-        component: MainContent2
+        path:'warehousedetails',
+        component:Warehousedetails
       },
       
        {
@@ -95,6 +100,22 @@ const routes: Routes = [
         component: Sidebar2
       },
       
+      
+    ]
+  },
+
+
+  {
+    path:'third-layout',
+    component:ThirdLayout,
+    children:[
+       {
+        path:'benefit-service',
+        component:BenefitService
+      },
+      
+
+
     ]
   }
 
