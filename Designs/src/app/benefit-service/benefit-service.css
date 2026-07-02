@@ -96,3 +96,40 @@ select.ng-valid.ng-touched{
     border:1px solid green;
 
 }
+
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 48px;
+  border: none;
+}
+
+
+.right-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.form-actions button {
+  height: 36px;
+  padding: 0 18px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.draft-btn,
+.previous-btn {
+  background: #fff;
+  color: #161616;
+  border: 1px solid #d2d6db;
+}
+
+.next-btn {
+  background: #1b8354;
+  color: #fff;
+  border: 1px solid #1b8354;
+}

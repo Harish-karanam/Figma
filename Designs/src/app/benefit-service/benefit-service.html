@@ -1,6 +1,10 @@
 <div class="warehouse-form">
 
-    <h2>Warehouse Identification & Address</h2>
+    <h2>Warehouse Identification & Address 
+         <button routerLink="/third-layout/ware-house-dimensions">
+  warehouse-dimension page
+</button>
+    </h2>
 
     <p>Please enter Wasel Address</p>
 
@@ -249,35 +253,14 @@
 
         </div>
 
-        <div class="button-row">
+        <div class="form-actions">
+      <button type="button" class="draft-btn">Save a draft</button>
 
-            <button
-                type="button"
-                (click)="saveDraft()">
-
-                Save a draft
-
-            </button>
-
-            <div class="right-buttons">
-
-                <button type="button">
-
-                    Previous
-
-                </button>
-
-                <button
-                    type="button"
-                    (click)="next()">
-
-                    Next
-
-                </button>
-
-            </div>
-
-        </div>
+      <div class="right-actions">
+        <button type="button" class="previous-btn" >Previous</button>
+        <button type="submit" class="next-btn" (click)="next()" >Next</button>
+      </div>
+    </div>
 
     </form>
 

@@ -11,6 +11,8 @@ import { Sidebar2 } from './shared/sidebar-2/sidebar-2';
 import { Warehousedetails } from './warehousedetails/warehousedetails';
 import { ThirdLayout } from './layouts/third-layout/third-layout';
 import { BenefitService } from './benefit-service/benefit-service';
+import { WareHouseDimensions } from './ware-house-dimensions/ware-house-dimensions';
+import { WareHouseManagerInformation } from './ware-house-manager-information/ware-house-manager-information';
 
 // const routes: Routes = [
 //   {
@@ -113,6 +115,14 @@ const routes: Routes = [
         path:'benefit-service',
         component:BenefitService
       },
+      {
+        path:'ware-house-dimensions',
+        component:WareHouseDimensions
+      },
+      {
+        path:'ware-house-manager-information',
+        component:WareHouseManagerInformation
+      }
       
 
 
