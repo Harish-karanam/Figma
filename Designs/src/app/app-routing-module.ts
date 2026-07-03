@@ -11,6 +11,11 @@ import  {Form} from './form/form';
 import { ThirdLayout } from './layouts/third-layout/third-layout';
 import { WarehouseInformation } from './warehouse-information/warehouse-information';
 import { BankInfo } from './bank-info/bank-info';
+
+import { Warehousedetails } from './warehousedetails/warehousedetails';
+import { ThirdLayout } from './layouts/third-layout/third-layout';
+import { BenefitService } from './benefit-service/benefit-service';
+
 // const routes: Routes = [
 //   {
 //     path:'',
@@ -91,8 +96,8 @@ const routes: Routes = [
     component: SecondLayout,
     children: [
       {
-        path: '',
-        component: MainContent2
+        path:'warehousedetails',
+        component:Warehousedetails
       },
       
        {
@@ -120,6 +125,23 @@ const routes: Routes = [
         component:BankInfo
       },
      
+      
+      
+    ]
+  },
+
+
+  {
+    path:'third-layout',
+    component:ThirdLayout,
+    children:[
+       {
+        path:'benefit-service',
+        component:BenefitService
+      },
+      
+
+
     ]
   }
 

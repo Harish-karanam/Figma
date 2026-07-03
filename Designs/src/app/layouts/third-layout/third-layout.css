@@ -18,4 +18,18 @@
     padding: 40px 16px;
     background: white;
     box-sizing: border-box;
+.third-layout-container {
+    width: 100%;
+    min-height: calc(100vh - 88px); /* Adjust if your navbar has a different height */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #F8FAFC;
+}
+
+.third-layout-container app-form {
+    width: 100%;
+    max-width: 840px;
 }
