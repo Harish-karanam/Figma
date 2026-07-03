@@ -98,6 +98,12 @@ import { Navbar2 } from './shared/navbar-2/navbar-2';
 import { MainLayout } from './layouts/main-layout/main-layout';
 import { SecondLayout } from './layouts/second-layout/second-layout';
 import { AcknowledgementPopup } from './shared/acknowledgement-popup/acknowledgement-popup';
+import { Form } from './form/form';
+import { ThirdLayout } from './layouts/third-layout/third-layout';
+import { Navbar3 } from './shared/navbar-3/navbar-3';
+import { ReactiveFormsModule } from '@angular/forms';
+import { WarehouseInformation } from './warehouse-information/warehouse-information';
+import { BankInfo } from './bank-info/bank-info';
 
 @NgModule({
   declarations: [
@@ -116,9 +122,22 @@ import { AcknowledgementPopup } from './shared/acknowledgement-popup/acknowledge
 
     MainLayout,
     SecondLayout,
-  
+
+    ThirdLayout,
+    Navbar3,
+    WarehouseInformation,
+    BankInfo,
   ],
-  imports: [BrowserModule, AppRoutingModule, MatToolbarModule, MatButtonModule, MatIconModule,  AcknowledgementPopup,],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    AcknowledgementPopup,
+    Form,
+    ReactiveFormsModule,
+  ],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
 })

@@ -1,0 +1,184 @@
+<form class="warehouse-form" [formGroup]="warehouseOwnershipForm" (ngSubmit)="onSubmit()">
+
+  <div *ngIf="!showFullForm">
+    <h2>Warehouse Ownership</h2>
+    <p>Complete below details</p>
+
+    <div class="leased-section">
+      <label class="main-label">Have you leased the warehouse?</label>
+
+      <label class="radio-option">
+        <input type="radio" value="yes" formControlName="leasedWarehouse">
+        Yes
+      </label>
+
+      <label class="radio-option">
+        <input type="radio" value="no" formControlName="leasedWarehouse">
+        No
+      </label>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" class="draft-btn">Save a draft</button>
+
+      <div class="right-actions">
+        <button type="button" class="previous-btn">Previous</button>
+        <button type="button" class="next-btn" (click)="showDetailsForm()">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="showFullForm">
+    <h2>Warehouse Ownership</h2>
+    <p>Complete below details</p>
+
+    <div class="leased-section">
+      <label class="main-label">Have you leased the warehouse?</label>
+
+      <label class="radio-option">
+        <input type="radio" value="yes" formControlName="leasedWarehouse">
+        Yes
+      </label>
+
+      <label class="radio-option">
+        <input type="radio" value="no" formControlName="leasedWarehouse">
+        No
+      </label>
+    </div>
+
+    <div class="form-grid">
+
+      <div class="form-field">
+        <label>Owner Type</label>
+        <select formControlName="ownerType">
+          <option value="">Option</option>
+          <option value="individual">Individual</option>
+          <option value="company">Company</option>
+        </select>
+        <small class="error" *ngIf="warehouseOwnershipForm.get('ownerType')?.touched && warehouseOwnershipForm.get('ownerType')?.hasError('required')">
+          Owner Type is required
+        </small>
+      </div>
+
+      <div class="form-field">
+        <label>ID Number</label>
+        <input type="text" formControlName="idNumber" placeholder="Entered text">
+        <small class="error" *ngIf="warehouseOwnershipForm.get('idNumber')?.touched && warehouseOwnershipForm.get('idNumber')?.hasError('required')">
+          ID Number is required
+        </small>
+        <small class="error" *ngIf="warehouseOwnershipForm.get('idNumber')?.touched && warehouseOwnershipForm.get('idNumber')?.hasError('pattern')">
+          ID Number must contain only numbers
+        </small>
+      </div>
+
+      <div class="form-field">
+        <label>ID Type</label>
+        <select formControlName="idType">
+          <option value="">Option</option>
+          <option value="national-id">National ID</option>
+          <option value="iqama">Iqama</option>
+          <option value="passport">Passport</option>
+        </select>
+        <small class="error" *ngIf="warehouseOwnershipForm.get('idType')?.touched && warehouseOwnershipForm.get('idType')?.hasError('required')">
+          ID Type is required
+        </small>
+      </div>
+
+      <div class="form-field mobile-field">
+        <label>Mobile Number</label>
+        <div class="mobile-input">
+          <span>+966</span>
+          <input type="text" formControlName="mobileNumber" placeholder="000000000">
+        </div>
+        <small class="error" *ngIf="warehouseOwnershipForm.get('mobileNumber')?.touched && warehouseOwnershipForm.get('mobileNumber')?.hasError('required')">
+          Mobile number is required
+        </small>
+        <small class="error" *ngIf="warehouseOwnershipForm.get('mobileNumber')?.touched && warehouseOwnershipForm.get('mobileNumber')?.hasError('pattern')">
+          Mobile number must contain only 9 digits
+        </small>
+      </div>
+
+      <div class="form-field">
+        <label>Nationality of the Owner</label>
+        <input type="text" formControlName="nationality" placeholder="Entered text">
+        <small class="error" *ngIf="warehouseOwnershipForm.get('nationality')?.touched && warehouseOwnershipForm.get('nationality')?.hasError('required')">
+          Nationality is required
+        </small>
+        <small class="error" *ngIf="warehouseOwnershipForm.get('nationality')?.touched && warehouseOwnershipForm.get('nationality')?.hasError('pattern')">
+          Nationality must contain only letters
+        </small>
+      </div>
+
+      <div class="form-field">
+        <label>Email</label>
+        <input type="email" formControlName="email" placeholder="Entered text">
+        <small class="error" *ngIf="warehouseOwnershipForm.get('email')?.touched && warehouseOwnershipForm.get('email')?.hasError('required')">
+          Email is required
+        </small>
+        <small class="error" *ngIf="warehouseOwnershipForm.get('email')?.touched && warehouseOwnershipForm.get('email')?.hasError('email')">
+          Enter a valid email address
+        </small>
+      </div>
+
+      <div class="form-field">
+        <label>Name of the Owner</label>
+        <input type="text" formControlName="ownerName" placeholder="Entered text">
+        <small class="error" *ngIf="warehouseOwnershipForm.get('ownerName')?.touched && warehouseOwnershipForm.get('ownerName')?.hasError('required')">
+          Owner name is required
+        </small>
+        <small class="error" *ngIf="warehouseOwnershipForm.get('ownerName')?.touched && warehouseOwnershipForm.get('ownerName')?.hasError('pattern')">
+          Owner name must contain only letters
+        </small>
+      </div>
+
+      <div class="form-field">
+        <label>Valid From</label>
+        <input type="date" formControlName="validFrom">
+        <small class="error" *ngIf="warehouseOwnershipForm.get('validFrom')?.touched && warehouseOwnershipForm.get('validFrom')?.hasError('required')">
+          Valid From is required
+        </small>
+      </div>
+
+      <div class="form-field">
+        <label>When did you Lease / Rent the warehouse?</label>
+        <input type="date" formControlName="leaseDate">
+        <small class="error" *ngIf="warehouseOwnershipForm.get('leaseDate')?.touched && warehouseOwnershipForm.get('leaseDate')?.hasError('required')">
+          Lease date is required
+        </small>
+      </div>
+
+      <div class="form-field">
+        <label>What is the Expiry Date of the Lease / Rent Agreement?</label>
+        <input type="date" formControlName="expiryDate">
+        <small class="error" *ngIf="warehouseOwnershipForm.get('expiryDate')?.touched && warehouseOwnershipForm.get('expiryDate')?.hasError('required')">
+          Expiry date is required
+        </small>
+      </div>
+
+    </div>
+
+    <div class="upload-section">
+      <label>Scanned Copy of the Agreement for Lease</label>
+      <p>
+        Maximum file size allowed is 2MB, supported file formats include .jpg,
+        .png, and .pdf.
+      </p>
+
+      <input type="file" accept=".jpg,.jpeg,.png,.pdf" (change)="onFileChange($event)">
+
+      <small class="error" *ngIf="warehouseOwnershipForm.get('agreementFile')?.touched && warehouseOwnershipForm.get('agreementFile')?.hasError('required')">
+        Please upload the agreement
+      </small>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" class="draft-btn">Save a draft</button>
+
+      <div class="right-actions">
+        <button type="button" class="previous-btn" (click)="backToSimpleForm()">Previous</button>
+        <button type="submit" class="next-btn">Next</button>
+      </div>
+    </div>
+  </div>
+
+</form>
