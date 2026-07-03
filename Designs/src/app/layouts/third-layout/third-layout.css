@@ -1,3 +1,23 @@
+/* .third-layout-container {
+  width: 100%;
+  min-height: calc(100vh - 130px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 24px 40px;
+  box-sizing: border-box;
+  background: #f8fafc;
+} */
+
+.third-layout-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    min-height: calc(100vh - 112px);
+    padding: 40px 16px;
+    background: white;
+    box-sizing: border-box;
 .third-layout-container {
     width: 100%;
     min-height: calc(100vh - 88px); /* Adjust if your navbar has a different height */

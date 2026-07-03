@@ -100,6 +100,12 @@ import { SecondLayout } from './layouts/second-layout/second-layout';
 
 import { Warehousedetails } from './warehousedetails/warehousedetails';
 import { AcknowledgementPopup } from './shared/acknowledgement-popup/acknowledgement-popup';
+import { Form } from './form/form';
+import { ThirdLayout } from './layouts/third-layout/third-layout';
+import { Navbar3 } from './shared/navbar-3/navbar-3';
+import { ReactiveFormsModule } from '@angular/forms';
+import { WarehouseInformation } from './warehouse-information/warehouse-information';
+import { BankInfo } from './bank-info/bank-info';
 
 import { ThirdLayout } from './layouts/third-layout/third-layout';
 import { BenefitService } from './benefit-service/benefit-service';
@@ -125,6 +131,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 
     MainLayout,
     SecondLayout,
+
+    ThirdLayout,
+    Navbar3,
+    WarehouseInformation,
+    BankInfo,
+  ],
+  imports: [
+    BrowserModule,
     Sidebar2,
     Warehousedetails,
     ThirdLayout,
@@ -138,6 +152,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatIconModule,
     AcknowledgementPopup,
+    Form,
+    ReactiveFormsModule,
   ],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
