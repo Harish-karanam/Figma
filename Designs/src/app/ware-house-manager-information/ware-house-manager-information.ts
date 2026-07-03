@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Stepper } from '../services/stepper';
 
 @Component({
   selector: 'app-ware-house-manager-information',
@@ -30,7 +31,9 @@ export class WareHouseManagerInformation {
     'Mrs',
   ]
 
-  constructor(private fb: FormBuilder){
+  constructor(private fb: FormBuilder,
+     private stepper:Stepper
+  ){
     this.warehousemanagerinformation=this.fb.group({
 
       idTypes:['',Validators.required],
@@ -50,6 +53,10 @@ export class WareHouseManagerInformation {
 
     })
 
+  }
+
+  ngOnInit(){
+    this.stepper.setStep(5);
   }
 
   //numbers

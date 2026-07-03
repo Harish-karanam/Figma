@@ -1,6 +1,8 @@
 <div class="warehouse-form">
 
-    <h2>Warehouse Manager Information</h2>
+    <h2>Warehouse Manager Information
+        <button routerLink="/third-layout/additional-service">Additional service</button>
+    </h2>
 
     <p>Complete details below</p>
 
@@ -162,11 +164,12 @@
             formControlName="mobileNo"
             (keypress)="numbersOnly($event)">
 
-            <small class="error" *ngIf="f['mobileNo'].touched && f['mobileNo'].errors?.['required']">
-                          Mobile Number is required.
-                </small>
+           
              
     </div>
+     <small class="error" *ngIf="f['mobileNo'].touched && f['mobileNo'].errors?.['required']">
+                          Mobile Number is required.
+                </small>
 </div>
 
     <div class="form-group">

@@ -4,10 +4,16 @@
     gap:18px 20px;
     width:100%;
 }
+.warehouse-form{
+    padding:32px;
+    background:#fff;
+  
+}
 
 .form-group{
     display:flex;
     flex-direction:column;
+    
 }
 
 .form-group label{

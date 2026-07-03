@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Stepper } from '../services/stepper';
 
 @Component({
   selector: 'app-benefit-service',
@@ -18,7 +19,9 @@ export class BenefitService {
     'Madinah'
   ];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+    private stepper:Stepper
+  ) {
 
     this.warehouseForm = this.fb.group({
 
@@ -46,7 +49,7 @@ export class BenefitService {
 
   postalCode: ['', [
     Validators.required,
-    Validators.pattern('^[0-9]{5}$')
+    Validators.pattern('^[0-9]{6}$')
   ]],
 
   additionalNo: ['', [
@@ -71,6 +74,12 @@ export class BenefitService {
 
     });
   }
+  ngOnInit(){
+
+this.stepper.setStep(2);
+
+}
+  
 
 // numbers 
 

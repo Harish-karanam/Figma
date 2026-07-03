@@ -107,6 +107,8 @@ import { Navbar3 } from './shared/navbar-3/navbar-3';
 import { ReactiveFormsModule } from '@angular/forms';
 import { WareHouseDimensions } from './ware-house-dimensions/ware-house-dimensions';
 import { WareHouseManagerInformation } from './ware-house-manager-information/ware-house-manager-information';
+import { AdditionalService } from './additional-service/additional-service';
+import { ProgressIndicator } from './shared/progress-indicator/progress-indicator';
 
 @NgModule({
   declarations: [
@@ -132,6 +134,8 @@ import { WareHouseManagerInformation } from './ware-house-manager-information/wa
     BenefitService,
     WareHouseDimensions,
     WareHouseManagerInformation,
+    AdditionalService,
+    ProgressIndicator,
   ],
   imports: [
     BrowserModule,

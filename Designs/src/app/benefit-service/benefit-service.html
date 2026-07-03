@@ -152,9 +152,9 @@
                     placeholder="Entered text"
                     (keypress)="numbersOnly($event)">
 
-                <small
+                   <small
                     class="error"
-                    *ngIf="f['postalCode'].errors?.['required']">
+                    *ngIf="f['postalCode'].errors?.['required'] && f['postalCode'].touched">
 
                     Postal Code is required.
 
@@ -179,6 +179,7 @@
                 <input
                     type="text"
                     formControlName="additionalNo"
+                    placeholder="Entered text "
                     (keypress)="numbersOnly($event)">
 
                 <small
@@ -199,6 +200,7 @@
 
                 <input
                     type="text"
+                    placeholder="Entered text"
                     formControlName="quarter">
 
                 <small
@@ -219,6 +221,7 @@
 
                 <input
                     type="number"
+                    placeholder="Enterd text"
                     formControlName="latitude">
 
                 <small
@@ -239,6 +242,7 @@
 
                 <input
                     type="number"
+                    placeholder="Enterd text"
                     formControlName="longitude">
 
                 <small

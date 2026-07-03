@@ -1,0 +1,229 @@
+<div class="warehouse-form">
+  <div class="additional-info-frame">
+    <p class="additional-info-frame-text">Additional Information</p>
+    <p class="please-provide-info-frame-text">
+      Please provide with the following additional information.
+    </p>
+  </div>
+
+  <form [formGroup]="additionalService" (ngSubmit)="next()">
+    <section class="section-complete-outer-frames">
+      <div class="four-form-frames">
+        <!-- //1 -->
+        <div class="common-frames">
+          <div class="innerframe-1">
+            <div class="innerframe-1-text-container">
+              <p class="innerframe-1-text-1">Are you in a financially sound position?</p>
+            </div>
+
+            <div class="radio-labels">
+              <label>
+                <input
+                  type="radio"
+                  value="Yes"
+                  formControlName="financiallySound"
+                  
+                />
+                Yes
+              </label>
+              <br />
+              <label>
+                <input
+                  type="radio"
+                  value="No"
+                  formControlName="financiallySound"
+                  
+                />
+                No
+              </label>
+            </div>
+            <small
+              class="error"
+              *ngIf="f['financiallySound'].touched && f['financiallySound'].errors?.['required']"
+            >
+              Please select an option.
+            </small>
+          </div>
+
+          <div class="innerframe-2">
+            <div class="file-upload-single-with-button">
+              <header class="header-container">
+                <label class="label-container">
+                  <p class="label-text">Upload Document</p>
+                </label>
+                <p class="maximum-file-size">
+                  Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and
+                  .pdf.
+                </p>
+              </header>
+              <button>
+                <span class="btton-container">
+                  <p class="btn-txt">Browse Files</p>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- //2 -->
+        <div class="common-frames">
+          <div class="innerframe-1">
+            <div class="innerframe-1-text-container">
+              <p class="innerframe-1-text-1">
+                Have you or your legal representative in the management of the establishment through
+                which you carry your activities, been previously convicted of financial crimes
+                without being subsequently restored to good standing?
+              </p>
+            </div>
+
+            <div class="radio-labels">
+              <label>
+                <input type="radio" 
+                value="Yes" 
+                formControlName="financialCrimes" />
+                Yes
+              </label>
+              <br /> 
+              <label>
+                <input type="radio" value="No" formControlName="financialCrimes"  />
+                No
+              </label>
+            </div>
+              <small
+              class="error"
+              *ngIf="f['financialCrimes'].touched && f['financialCrimes'].errors?.['required']"
+            >
+              Please select an option.
+            </small>
+          </div>
+
+          <div class="innerframe-2">
+            <div class="file-upload-single-with-button">
+              <header class="header-container">
+                <label class="label-container">
+                  <p class="label-text">Upload Document</p>
+                </label>
+                <p class="maximum-file-size">
+                  Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and
+                  .pdf.
+                </p>
+              </header>
+              <button>
+                <span class="btton-container">
+                  <p class="btn-txt">Browse Files</p>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- //3 -->
+        <div class="common-frames">
+          <div class="innerframe-1">
+            <div class="innerframe-1-text-container">
+              <p class="innerframe-1-text-1">
+                Do you have an administrative system to help administer a Tax Warehouse, which is
+                complaint with the provisions of the Law and these Regulations?
+              </p>
+            </div>
+
+            <div class="radio-labels">
+              <label>
+                <input type="radio" value="Yes" formControlName="administrativeSystem"  />
+                Yes
+              </label>
+              <br />
+              <label>
+                <input type="radio" value="No" formControlName="administrativeSystem"  />
+                No
+              </label>
+            </div>
+              <small
+              class="error"
+              *ngIf="f['administrativeSystem'].touched && f['administrativeSystem'].errors?.['required']"
+            >
+              Please select an option.
+            </small>
+          </div>
+
+          <div class="innerframe-2">
+            <div class="file-upload-single-with-button">
+              <header class="header-container">
+                <label class="label-container">
+                  <p class="label-text">Upload Document</p>
+                </label>
+                <p class="maximum-file-size">
+                  Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and
+                  .pdf.
+                </p>
+              </header>
+              <button>
+                <span class="btton-container">
+                  <p class="btn-txt">Browse Files</p>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- //4 -->
+        <div class="common-frames">
+          <div class="innerframe-1">
+            <div class="innerframe-1-text-container">
+              <p class="innerframe-1-text-1">
+                Do you have safely and security measures in place limiting accidents as determined by concerned authorities?
+              </p>
+            </div>
+
+            <div class="radio-labels">
+              <label>
+                <input type="radio" value="Yes" formControlName="safetyMeasures"  />
+                Yes
+              </label>
+              <br />
+              <label>
+                <input type="radio" value="No" formControlName="safetyMeasures"  />
+                No
+              </label>
+            </div>
+              <small
+              class="error"
+              *ngIf="f['safetyMeasures'].touched && f['safetyMeasures'].errors?.['required']"
+            >
+              Please select an option.
+            </small>
+          </div>
+
+          <div class="innerframe-2">
+            <div class="file-upload-single-with-button">
+              <header class="header-container">
+                <label class="label-container">
+                  <p class="label-text">Upload Document</p>
+                </label>
+                <p class="maximum-file-size">
+                  Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and
+                  .pdf.
+                </p>
+              </header>
+              <button>
+                <span class="btton-container">
+                  <p class="btn-txt">Browse Files</p>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- button -->
+      <div class="form-actions">
+        <button type="button" class="draft-btn">Save a draft</button>
+
+        <div class="right-actions">
+          <button type="button" class="previous-btn">Previous</button>
+          <button type="submit" class="next-btn" (click)="next()" >Next</button>
+        </div>
+      </div>
+    </section>
+  </form>
+</div>

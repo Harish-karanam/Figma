@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Stepper } from '../services/stepper';
 
 @Component({
   selector: 'app-ware-house-dimensions',
@@ -10,7 +11,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class WareHouseDimensions {
   warehouseDimension:FormGroup;
 
-  constructor(private fb:FormBuilder){
+  constructor(private fb:FormBuilder,
+    private stepper:Stepper
+  ){
     this.warehouseDimension=this.fb.group({
 
       Length:['',[
@@ -42,6 +45,10 @@ export class WareHouseDimensions {
     });
 
     
+  }
+
+  ngOnInit(){
+    this.stepper.setStep(4);
   }
 
  numbersOnly(event: KeyboardEvent): void {

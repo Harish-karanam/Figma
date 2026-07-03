@@ -13,6 +13,7 @@ import { ThirdLayout } from './layouts/third-layout/third-layout';
 import { BenefitService } from './benefit-service/benefit-service';
 import { WareHouseDimensions } from './ware-house-dimensions/ware-house-dimensions';
 import { WareHouseManagerInformation } from './ware-house-manager-information/ware-house-manager-information';
+import { AdditionalService } from './additional-service/additional-service';
 
 // const routes: Routes = [
 //   {
@@ -122,6 +123,10 @@ const routes: Routes = [
       {
         path:'ware-house-manager-information',
         component:WareHouseManagerInformation
+      },
+      {
+        path:'additional-service',
+        component:AdditionalService
       }
       
 
