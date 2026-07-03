@@ -11,6 +11,7 @@ import  {Form} from './form/form';
 import { ThirdLayout } from './layouts/third-layout/third-layout';
 import { WarehouseInformation } from './warehouse-information/warehouse-information';
 import { BankInfo } from './bank-info/bank-info';
+import { Summary } from './summary/summary';
 // const routes: Routes = [
 //   {
 //     path:'',
@@ -118,6 +119,10 @@ const routes: Routes = [
       {
         path:'bank-info',
         component:BankInfo
+      },
+      {
+        path:'summary',
+        component:Summary
       },
      
     ]

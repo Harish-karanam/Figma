@@ -104,6 +104,7 @@ import { Navbar3 } from './shared/navbar-3/navbar-3';
 import { ReactiveFormsModule } from '@angular/forms';
 import { WarehouseInformation } from './warehouse-information/warehouse-information';
 import { BankInfo } from './bank-info/bank-info';
+import { Summary } from './summary/summary';
 
 @NgModule({
   declarations: [
@@ -127,6 +128,7 @@ import { BankInfo } from './bank-info/bank-info';
     Navbar3,
     WarehouseInformation,
     BankInfo,
+    Summary,
   ],
   imports: [
     BrowserModule,
