@@ -1,0 +1,56 @@
+<!-- <div class="stepper">
+
+  <div
+      class="step"
+      *ngFor="let step of steps; let i=index">
+
+      <div
+      class="circle"
+
+      [class.completed]="i+1 < currentStep"
+
+      [class.active]="i+1==currentStep">
+
+        {{i+1}}
+
+      </div>
+
+      <div class="text">
+
+        {{step}}
+
+      </div>
+
+  </div>
+
+</div> -->
+
+<div class="progress-indicator-complete">
+  <div class="stepper">
+
+  <div
+      class="step"
+      *ngFor="let step of steps; let i=index">
+
+      <div
+      class="circle"
+
+      [class.completed]="i+1 < currentStep"
+
+      [class.active]="i+1==currentStep">
+
+        {{i+1}}
+
+      </div>
+
+      <div class="text">
+
+        {{step}}
+
+      </div>
+
+  </div>
+
+</div>
+
+</div>

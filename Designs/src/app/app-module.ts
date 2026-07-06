@@ -107,10 +107,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { WarehouseInformation } from './warehouse-information/warehouse-information';
 import { BankInfo } from './bank-info/bank-info';
 
-import { ThirdLayout } from './layouts/third-layout/third-layout';
+
 import { BenefitService } from './benefit-service/benefit-service';
-import { Navbar3 } from './shared/navbar-3/navbar-3';
-import { ReactiveFormsModule } from '@angular/forms';
+
+import { WareHouseDimensions } from './ware-house-dimensions/ware-house-dimensions';
+import { WareHouseManagerInformation } from './ware-house-manager-information/ware-house-manager-information';
+import { AdditionalService } from './additional-service/additional-service';
+import { ProgressIndicator } from './shared/progress-indicator/progress-indicator';
 
 @NgModule({
   declarations: [
@@ -127,7 +130,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     Sidebar2,
     MainContent2,
     Navbar3,
-    
 
     MainLayout,
     SecondLayout,
@@ -136,14 +138,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     Navbar3,
     WarehouseInformation,
     BankInfo,
-  ],
-  imports: [
-    BrowserModule,
-    Sidebar2,
+     Sidebar2,
     Warehousedetails,
     ThirdLayout,
     BenefitService,
+    WareHouseDimensions,
+    WareHouseManagerInformation,
+    AdditionalService,
+    ProgressIndicator,
   ],
+  
   imports: [
     BrowserModule,
     ReactiveFormsModule,

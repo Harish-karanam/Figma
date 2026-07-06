@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Stepper } from '../services/stepper';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-benefit-service',
@@ -18,7 +20,9 @@ export class BenefitService {
     'Madinah'
   ];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+    private stepper:Stepper, private router:Router
+  ) {
 
     this.warehouseForm = this.fb.group({
 
@@ -46,7 +50,7 @@ export class BenefitService {
 
   postalCode: ['', [
     Validators.required,
-    Validators.pattern('^[0-9]{5}$')
+    Validators.pattern('^[0-9]{6}$')
   ]],
 
   additionalNo: ['', [
@@ -71,6 +75,12 @@ export class BenefitService {
 
     });
   }
+  ngOnInit(){
+
+this.stepper.setStep(2);
+
+}
+  
 
 // numbers 
 
@@ -121,6 +131,8 @@ lettersOnly(event: KeyboardEvent): void {
     console.log(this.warehouseForm.value);
 
     this.warehouseForm.reset();
+    this.router.navigate(['/third-layout/form'])
+    
 
   }
 

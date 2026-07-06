@@ -36,6 +36,7 @@ export class Form implements OnInit {
       agreementFile: [null, Validators.required]
     });
   }
+  
 
   showDetailsForm(): void {
     this.showFullForm = true;

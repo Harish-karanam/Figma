@@ -13,8 +13,11 @@ import { WarehouseInformation } from './warehouse-information/warehouse-informat
 import { BankInfo } from './bank-info/bank-info';
 
 import { Warehousedetails } from './warehousedetails/warehousedetails';
-import { ThirdLayout } from './layouts/third-layout/third-layout';
+
 import { BenefitService } from './benefit-service/benefit-service';
+import { WareHouseDimensions } from './ware-house-dimensions/ware-house-dimensions';
+import { WareHouseManagerInformation } from './ware-house-manager-information/ware-house-manager-information';
+import { AdditionalService } from './additional-service/additional-service';
 
 // const routes: Routes = [
 //   {
@@ -124,26 +127,27 @@ const routes: Routes = [
         path:'bank-info',
         component:BankInfo
       },
+       {
+        path:'benefit-service',
+        component:BenefitService
+      },
+      {
+        path:'ware-house-dimensions',
+        component:WareHouseDimensions
+      },
+      {
+        path:'ware-house-manager-information',
+        component:WareHouseManagerInformation
+      },
+      {
+        path:'additional-service',
+        component:AdditionalService
+      }
      
       
       
     ]
   },
-
-
-  {
-    path:'third-layout',
-    component:ThirdLayout,
-    children:[
-       {
-        path:'benefit-service',
-        component:BenefitService
-      },
-      
-
-
-    ]
-  }
 
 ];
 

@@ -1,6 +1,8 @@
 <div class="warehouse-form">
 
-    <h2>Warehouse Identification & Address</h2>
+    <h2>Warehouse Identification & Address 
+        
+    </h2>
 
     <p>Please enter Wasel Address</p>
 
@@ -148,9 +150,9 @@
                     placeholder="Entered text"
                     (keypress)="numbersOnly($event)">
 
-                <small
+                   <small
                     class="error"
-                    *ngIf="f['postalCode'].errors?.['required']">
+                    *ngIf="f['postalCode'].errors?.['required'] && f['postalCode'].touched">
 
                     Postal Code is required.
 
@@ -175,6 +177,7 @@
                 <input
                     type="text"
                     formControlName="additionalNo"
+                    placeholder="Entered text "
                     (keypress)="numbersOnly($event)">
 
                 <small
@@ -195,6 +198,7 @@
 
                 <input
                     type="text"
+                    placeholder="Entered text"
                     formControlName="quarter">
 
                 <small
@@ -215,6 +219,7 @@
 
                 <input
                     type="number"
+                    placeholder="Enterd text"
                     formControlName="latitude">
 
                 <small
@@ -235,6 +240,7 @@
 
                 <input
                     type="number"
+                    placeholder="Enterd text"
                     formControlName="longitude">
 
                 <small
@@ -249,35 +255,17 @@
 
         </div>
 
-        <div class="button-row">
+        <div class="form-actions">
+      <button type="button" class="draft-btn">Save a draft</button>
 
-            <button
-                type="button"
-                (click)="saveDraft()">
-
-                Save a draft
-
-            </button>
-
-            <div class="right-buttons">
-
-                <button type="button">
-
-                    Previous
-
-                </button>
-
-                <button
-                    type="button"
-                    (click)="next()">
-
-                    Next
-
-                </button>
-
-            </div>
-
-        </div>
+      <div class="right-actions">
+        <button type="button" class="previous-btn" >Previous</button>
+        <!-- <button class="next-btn"routerLink="/third-layout/form" style="cursor: pointer;">Next</button> -->
+          <button type="submit" class="next-btn">
+    Next
+</button>
+      </div>
+    </div>
 
     </form>
 
