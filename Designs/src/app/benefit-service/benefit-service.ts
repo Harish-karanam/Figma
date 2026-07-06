@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Stepper } from '../services/stepper';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-benefit-service',
@@ -20,7 +21,7 @@ export class BenefitService {
   ];
 
   constructor(private fb: FormBuilder,
-    private stepper:Stepper
+    private stepper:Stepper, private router:Router
   ) {
 
     this.warehouseForm = this.fb.group({
@@ -130,6 +131,8 @@ lettersOnly(event: KeyboardEvent): void {
     console.log(this.warehouseForm.value);
 
     this.warehouseForm.reset();
+    this.router.navigate(['/third-layout/form'])
+    
 
   }
 

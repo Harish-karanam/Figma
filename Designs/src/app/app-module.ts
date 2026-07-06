@@ -100,11 +100,16 @@ import { SecondLayout } from './layouts/second-layout/second-layout';
 
 import { Warehousedetails } from './warehousedetails/warehousedetails';
 import { AcknowledgementPopup } from './shared/acknowledgement-popup/acknowledgement-popup';
-
+import { Form } from './form/form';
 import { ThirdLayout } from './layouts/third-layout/third-layout';
-import { BenefitService } from './benefit-service/benefit-service';
 import { Navbar3 } from './shared/navbar-3/navbar-3';
 import { ReactiveFormsModule } from '@angular/forms';
+import { WarehouseInformation } from './warehouse-information/warehouse-information';
+import { BankInfo } from './bank-info/bank-info';
+
+
+import { BenefitService } from './benefit-service/benefit-service';
+
 import { WareHouseDimensions } from './ware-house-dimensions/ware-house-dimensions';
 import { WareHouseManagerInformation } from './ware-house-manager-information/ware-house-manager-information';
 import { AdditionalService } from './additional-service/additional-service';
@@ -128,7 +133,12 @@ import { ProgressIndicator } from './shared/progress-indicator/progress-indicato
 
     MainLayout,
     SecondLayout,
-    Sidebar2,
+
+    ThirdLayout,
+    Navbar3,
+    WarehouseInformation,
+    BankInfo,
+     Sidebar2,
     Warehousedetails,
     ThirdLayout,
     BenefitService,
@@ -137,6 +147,7 @@ import { ProgressIndicator } from './shared/progress-indicator/progress-indicato
     AdditionalService,
     ProgressIndicator,
   ],
+  
   imports: [
     BrowserModule,
     ReactiveFormsModule,
@@ -145,6 +156,8 @@ import { ProgressIndicator } from './shared/progress-indicator/progress-indicato
     MatButtonModule,
     MatIconModule,
     AcknowledgementPopup,
+    Form,
+    ReactiveFormsModule,
   ],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],

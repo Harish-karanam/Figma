@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Stepper } from '../services/stepper';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ware-house-manager-information',
@@ -32,7 +33,8 @@ export class WareHouseManagerInformation {
   ]
 
   constructor(private fb: FormBuilder,
-     private stepper:Stepper
+     private stepper:Stepper,
+     private router:Router
   ){
     this.warehousemanagerinformation=this.fb.group({
 
@@ -115,6 +117,10 @@ lettersOnly(event: KeyboardEvent): void {
       }
       console.log(this.warehousemanagerinformation.value);
       this.warehousemanagerinformation.reset();
+
+        this.warehousemanagerinformation.reset();
+
+      this.router.navigate(['/third-layout/bank-info']);
       
     }
 }
