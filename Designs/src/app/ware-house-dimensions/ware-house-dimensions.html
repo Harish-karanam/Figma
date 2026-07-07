@@ -1,159 +1,159 @@
 <div class="warehouse-form">
-    <h2>Warehouse Dimensions 
-        <button routerLink="/third-layout/ware-house-manager-information">warehouse manager information</button>
-    </h2>
-    <p>Please provide the dimensions of the warehouse.</p>
+  <h2>Warehouse Dimensions</h2>
+  <p>Please provide the dimensions of the warehouse.</p>
 
-    <form [formGroup]="warehouseDimension" (ngSubmit)="next()" >
-            <strong>Size(Meters)</strong> <br> <br>
-        <div class="form-grid">
-                
-            <div class="form-group">
-               
-                <label >Length</label>
+  <form [formGroup]="warehouseDimension" (ngSubmit)="next()">
+    <strong>Size(Meters)</strong> <br />
+    <br />
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Length</label>
 
-                <input 
-                 type="text"
-                 placeholder="Enterd text"
-                 formControlName="Length" 
-                 (keypress)="numbersOnly($event)">
+        <input
+          type="text"
+          placeholder="Enterd text"
+          formControlName="Length"
+          (keypress)="numbersOnly($event)"
+          maxlength="30"
+        />
 
-                  <small class="error" *ngIf="f['Length'].touched && f['Length'].errors?.['required']">
-                          Length is required.
-                </small>
+        <small class="error" *ngIf="f['Length'].touched && f['Length'].errors?.['required']">
+          Length is required.
+        </small>
 
-                <small class="error" *ngIf="f['Length'].errors?.['pattern']">
-                    Length should be greater than 0
-                </small>
+        <small class="error" *ngIf="f['Length'].errors?.['pattern']">
+          Length should be greater than 0
+        </small>
+      </div>
 
-            </div>
+      <div class="form-group">
+        <label>Width</label>
 
-            <div class="form-group">
-                <label >Width</label>
+        <input
+          type="text"
+          placeholder="Enterd text"
+          formControlName="Width"
+          (keypress)="numbersOnly($event)"
+          maxlength="30"
+        />
 
-                <input type="text" 
-                placeholder="Enterd text"
-                formControlName="Width">
+        <small class="error" *ngIf="f['Width'].touched && f['Width'].errors?.['required']">
+          Width is required
+        </small>
 
-                <small class="error" *ngIf="f['Width'].touched && f['Width'].errors?.['required']">
-                    Width is required
-                </small>
+        <small class="error" *ngIf="f['Width'].errors?.['pattern']">
+          Width should be greater than 0
+        </small>
+      </div>
 
-                <small class="error" *ngIf="f['Width'].errors?.['pattern']">
-                    Width should be greater than 0
-                </small>
+      <div class="form-group">
+        <label>Height</label>
 
-            </div>
+        <input
+          type="text"
+          placeholder="Enterd text"
+          formControlName="Height"
+          (keypress)="numbersOnly($event)"
+          maxlength="30"
+        />
 
-            <div class="form-group">
-                <label >Height</label>
+        <small class="error" *ngIf="f['Height'].touched && f['Height'].errors?.['required']">
+          Height Requied
+        </small>
 
-                <input type="text" 
-                placeholder="Enterd text"
-                formControlName="Height">
+        <small class="error" *ngIf="f['Height'].errors?.['pattern']">
+          Height should be greater than 0
+        </small>
+      </div>
 
-                <small class="error" *ngIf="f['Height'].touched && f['Height'].errors?.['required']">
-                    Height Requied
+      <div class="form-group">
+        <label for=""></label>
+      </div>
 
-                </small>
+      <strong>Storage Capacity</strong> <br />
+      <div class="form-group">
+        <label for="">Cubic Meters</label>
 
-                 <small class="error" *ngIf="f['Height'].errors?.['pattern']">
-                    Height should be greater than 0
-                </small>
+        <input
+          type="text"
+          placeholder="Eneterd text"
+          formControlName="CubicMeters"
+          (keypress)="numbersOnly($event)"
+          maxlength="30"
+        />
 
-            </div>
+        <small
+          class="error"
+          *ngIf="f['CubicMeters'].touched && f['CubicMeters'].errors?.['required']"
+        >
+          Cubic Meters Required
+        </small>
 
-            <div class="form-group">
-                <label for=""></label>
+        <small class="error" *ngIf="f['CubicMeters'].errors?.['pattern']">
+          CubicMeters should be greater than 0
+        </small>
+      </div>
 
-            </div>
+      <div class="form-group">
+        <label for="">Square Meters</label>
 
-            <strong>Storage Capacity</strong>  <br>
-            <div class="form-group">
-                <label for="">Cubic Meters</label>
-                
-                <input type="text"
-                placeholder="Eneterd text"
-                formControlName="CubicMeters">
+        <input
+          type="text"
+          placeholder="Eneterd text"
+          formControlName="SquareMeters"
+          (keypress)="numbersOnly($event)"
+          maxlength="30"
+        />
 
-                <small class="error" *ngIf="f['CubicMeters'].touched && f['CubicMeters'].errors ?.['required']">
-                    Cubic Meters Required
-                </small>
+        <small
+          class="error"
+          *ngIf="f['SquareMeters'].touched && f['SquareMeters'].errors?.['required']"
+        >
+          SquareMeters Required
+        </small>
 
-                 <small class="error" *ngIf="f['CubicMeters'].errors?.['pattern']">
-                    CubicMeters should be greater than 0
-                </small>
-
-            </div>
-
-            <div class="form-group">
-                <label for="">Square Meters</label>
-                
-                <input type="text"
-                placeholder="Eneterd text"
-                formControlName="SquareMeters">
-
-                <small class="error" *ngIf="f['SquareMeters'].touched && f['SquareMeters'].errors ?.['required']">
-                    SquareMeters Required
-                </small>
-
-                 <small class="error" *ngIf="f['SquareMeters'].errors?.['pattern']">
-                    SquareMeters should be greater than 0
-                </small>
-
-                
-
-            </div>
-
-            
-                
-
-        </div>
-        <br>
-        <div class="alert-box">
-
-    <div class="alert-icon">
-        <span>i</span>
+        <small class="error" *ngIf="f['SquareMeters'].errors?.['pattern']">
+          SquareMeters should be greater than 0
+        </small>
+      </div>
     </div>
+    <br />
+    <div class="alert-box">
+      <div class="alert-icon">
+        <span>i</span>
+      </div>
 
-    <div class="alert-content">
+      <div class="alert-content">
         <h4>Notification/Alert message title</h4>
 
         <p>
-            The above information should be inline with dimensions
-            document obtained from Municipality or Civil Affairs
+          The above information should be inline with dimensions document obtained from Municipality
+          or Civil Affairs
         </p>
-    </div>
-
-</div>
-
-        <br>
-      <div class="upload-section">
-
-  <label class="upload-title">
-    Copy of the Municipal Lease
-  </label>
-
-  <p class="upload-note">
-    Maximum file size allowed is 2MB, supported file formats include
-    .jpeg, .png, and .pdf.
-  </p>
-
-  <button type="button" class="browse-btn">
-    Browse files
-  </button>
-
-</div>
-<div class="form-actions">
-      <button type="button" class="draft-btn">Save a draft</button>
-
-      <div class="right-actions">
-        <button type="button" class="previous-btn" >Previous</button>
-        <button class="next-btn"routerLink="/third-layout/ware-house-manager-information" style="cursor: pointer;">Next</button>
       </div>
     </div>
 
-<!-- <div class="button-row">
+    <br />
+    <div class="upload-section">
+      <label class="upload-title"> Copy of the Municipal Lease </label>
+
+      <p class="upload-note">
+        Maximum file size allowed is 2MB, supported file formats include .jpeg, .png, and .pdf.
+      </p>
+
+      <button type="button" class="browse-btn">Browse files</button>
+    </div>
+    <div class="form-actions">
+      <button type="button" class="draft-btn">Save a draft</button>
+
+      <div class="right-actions">
+        <button type="button" class="previous-btn" routerLink="/third-layout/form">Previous</button>
+        <!-- <button class="next-btn"routerLink="/third-layout/ware-house-manager-information" style="cursor: pointer;">Next</button> -->
+        <button type="submit" class="next-btn">Next</button>
+      </div>
+    </div>
+
+    <!-- <div class="button-row">
 
             <button
                 type="button"
@@ -185,6 +185,5 @@
             </div>
 
         </div> -->
-        
-    </form>
+  </form>
 </div>

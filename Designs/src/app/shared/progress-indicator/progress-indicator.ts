@@ -12,10 +12,10 @@ export class ProgressIndicator {
   currentStep=1;
     steps = [
     'Warehouse Information',
-    'Warehouse Identification',
+    'Warehouse Identification &...',
     'Warehouse Ownership',
     'Warehouse Dimensions',
-    'Warehouse Manager Information',
+    'Warehouse Manager Inform...',
     'Bank Guarantee Information',
     'Additional Information',
     'Summary'
@@ -28,4 +28,31 @@ export class ProgressIndicator {
     });
 
   }
+
+   ngOnInit(): void {
+    this.stepper.currentStep$.subscribe(step => {
+      this.currentStep = step;
+    });
+  }
+
+  isCompleted(stepIndex: number): boolean {
+    return stepIndex + 1 < this.currentStep;
+  }
+
+  isCurrent(stepIndex: number): boolean {
+    return stepIndex + 1 === this.currentStep;
+  }
+
+  isFuture(stepIndex: number): boolean {
+    return stepIndex + 1 > this.currentStep;
+  }
+
+  isLastStep(stepIndex: number): boolean {
+    return stepIndex === this.steps.length - 1;
+  }
+
+
+
+
+  
 }

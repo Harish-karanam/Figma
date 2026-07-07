@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Stepper } from '../services/stepper';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ware-house-dimensions',
@@ -12,7 +13,7 @@ export class WareHouseDimensions {
   warehouseDimension:FormGroup;
 
   constructor(private fb:FormBuilder,
-    private stepper:Stepper
+    private stepper:Stepper, private router:Router
   ){
     this.warehouseDimension=this.fb.group({
 
@@ -90,6 +91,7 @@ export class WareHouseDimensions {
       }
       console.log(this.warehouseDimension.value);
       this.warehouseDimension.reset();
+      this.router.navigate(['/third-layout/ware-house-manager-information'])
       
     }
 }

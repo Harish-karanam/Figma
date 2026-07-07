@@ -8,6 +8,8 @@ gap: var(--Global-spacing-4xl, 32px);
 flex-shrink: 0;
 padding:32px;
     background:#fff;
+   
+    
 }
 
 .additional-info-frame{

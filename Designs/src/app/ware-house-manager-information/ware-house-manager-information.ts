@@ -39,15 +39,27 @@ export class WareHouseManagerInformation {
     this.warehousemanagerinformation=this.fb.group({
 
       idTypes:['',Validators.required],
-      idNumber:['',Validators.required],
+      idNumber:['',[Validators.required,
+        Validators.minLength(4)]
+      ],
       nationalityOwner:['',Validators.required],
       dateOfHiring:['',Validators.required],
       title:['',Validators.required],
-      firstName:['',Validators.required],
-      surName:['',Validators.required],
-      middleName:['',Validators.required],
-      fatherName:['',Validators.required],
-      grandFatherName:['',Validators.required],
+      firstName:['',[Validators.required,
+        Validators.minLength(4)
+      ]],
+      surName:['',[Validators.required,
+        Validators.minLength(4)
+      ]],
+      middleName:['',[Validators.required,
+        Validators.minLength(4)
+      ]],
+      fatherName:['',[Validators.required,
+        Validators.minLength(4)
+      ]],
+      grandFatherName:['',[Validators.required,
+        Validators.minLength(4)
+      ]],
       mobileNo:['',Validators.required],
       email:['',Validators.required],
       
@@ -116,7 +128,7 @@ lettersOnly(event: KeyboardEvent): void {
 
       }
       console.log(this.warehousemanagerinformation.value);
-      this.warehousemanagerinformation.reset();
+     
 
         this.warehousemanagerinformation.reset();
 

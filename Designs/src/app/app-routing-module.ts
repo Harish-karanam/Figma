@@ -18,6 +18,7 @@ import { BenefitService } from './benefit-service/benefit-service';
 import { WareHouseDimensions } from './ware-house-dimensions/ware-house-dimensions';
 import { WareHouseManagerInformation } from './ware-house-manager-information/ware-house-manager-information';
 import { AdditionalService } from './additional-service/additional-service';
+import { Summary } from './summary/summary';
 
 // const routes: Routes = [
 //   {
@@ -142,6 +143,10 @@ const routes: Routes = [
       {
         path:'additional-service',
         component:AdditionalService
+      },
+      {
+        path:'summary',
+        component:Summary
       }
      
       

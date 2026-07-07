@@ -1,272 +1,225 @@
 <div class="warehouse-form">
+  <h2>Warehouse Identification & Address</h2>
 
-    <h2>Warehouse Identification & Address 
-        
-    </h2>
+  <p>Please enter Wasel Address</p>
 
-    <p>Please enter Wasel Address</p>
+  <form [formGroup]="warehouseForm" (ngSubmit)="next()">
+    <div class="form-grid">
+      <!-- Warehouse Name -->
 
-    <form [formGroup]="warehouseForm" (ngSubmit)="next()">
+      <div class="form-group">
+        <label>Warehouse Name</label>
 
-        <div class="form-grid">
+        <input
+          type="text"
+          placeholder="Entered text"
+          formControlName="warehouseName"
+          (keypress)="lettersOnly($event)"
+          maxlength="30"
+        />
 
-            <!-- Warehouse Name -->
+        <small
+          class="error"
+          *ngIf="f['warehouseName'].touched && f['warehouseName'].errors?.['required']"
+        >
+          Warehouse Name is required.
+        </small>
 
-            <div class="form-group">
+        <small
+          class="error"
+          *ngIf="f['warehouseName'].touched && f['warehouseName'].hasError('minlength')"
+        >
+          Warehouse name must be minimum 4 characters.
+        </small>
 
-                <label>Warehouse Name</label>
-
-                <input
-                    type="text"
-                    placeholder="Entered text"
-                    formControlName="warehouseName"
-                    (keypress)="lettersOnly($event)" >
-
-                 <small class="error" *ngIf="f['warehouseName'].touched && f['warehouseName'].errors?.['required']">
-                          Warehouse Name is required.
-                </small>
-
-                <!-- <small
+        <!-- <small
                     class="error"
                     *ngIf="f['warehouseName'].errors?.['pattern']">
 
                     Only Letters allowed.
 
                 </small> -->
+      </div>
 
-            </div>
+      <!-- Building Number -->
 
-            <!-- Building Number -->
+      <div class="form-group">
+        <label>Building Number</label>
 
-            <div class="form-group">
+        <input
+          type="text"
+          placeholder="Entered text"
+          formControlName="buildingNumber"
+          (keypress)="numbersOnly($event)"
+        />
 
-                <label>Building Number</label>
+        <small
+          class="error"
+          *ngIf="f['buildingNumber'].errors?.['required'] && f['buildingNumber'].touched"
+        >
+          Building Number is required.
+        </small>
+        <small
+          class="error"
+          *ngIf="f['buildingNumber'].touched && f['buildingNumber'].hasError('minlength')"
+        >
+          buildingNumber must be minimum 4 characters.
+        </small>
 
-                <input
-                    type="text"
-                    placeholder="Entered text"
-                    formControlName="buildingNumber"
-                     (keypress)="numbersOnly($event)">
-
-                <small
-                    class="error"
-                    *ngIf="f['buildingNumber'].errors?.['required'] && f['buildingNumber'].touched">
-
-                    Building Number is required.
-
-                </small>
-
-                <!-- <small
+        <!-- <small
                     class="error"
                     *ngIf="f['buildingNumber'].errors?.['pattern']">
 
                     Only numbers allowed.
 
                 </small> -->
+      </div>
+
+      <!-- Street -->
 
-            </div>
+      <div class="form-group">
+        <label>Street Name</label>
 
-            <!-- Street -->
+        <input type="text" placeholder="Entered text" formControlName="streetName" maxlength="20" />
 
-            <div class="form-group">
+        <small
+          class="error"
+          *ngIf="f['streetName'].errors?.['required'] && f['streetName'].touched"
+        >
+          Street Name is required.
+        </small>
 
-                <label>Street Name</label>
+        <small
+          class="error"
+          *ngIf="f['streetName'].touched && f['streetName'].hasError('minlength')"
+        >
+          Streetname must be minimum 4 characters.
+        </small>
+      </div>
 
-                <input
-                    type="text"
-                    placeholder="Entered text"
-                    formControlName="streetName">
+      <!-- Region -->
 
-                <small
-                    class="error"
-                    *ngIf="f['streetName'].touched && f['streetName'].invalid">
+      <div class="form-group">
+        <label>Region/District</label>
 
-                    Street Name is required.
+        <input type="text" placeholder="Entered text" formControlName="region" maxlength="20" />
 
-                </small>
+        <small class="error" *ngIf="f['region'].errors?.['required'] && f['region'].touched">
+          Region is required.
+        </small>
 
-            </div>
+        <small class="error" *ngIf="f['region'].touched && f['region'].hasError('minlength')">
+          Region must be minimum 4 characters.
+        </small>
+      </div>
 
-            <!-- Region -->
+      <!-- City -->
 
-            <div class="form-group">
+      <div class="form-group">
+        <label>City</label>
 
-                <label>Region/District</label>
+        <select formControlName="city">
+          <option value="">Select City</option>
 
-                <input
-                    type="text"
-                    placeholder="Entered text"
-                    formControlName="region">
+          <option *ngFor="let city of cities" [value]="city">
+            {{ city }}
+          </option>
+        </select>
 
-                <small
-                    class="error"
-                    *ngIf="f['region'].touched && f['region'].invalid">
+        <small class="error" *ngIf="f['city'].touched && f['city'].invalid">
+          City is required.
+        </small>
+      </div>
 
-                    Region is required.
+      <!-- Postal Code -->
 
-                </small>
+      <div class="form-group">
+        <label>Postal Code</label>
 
-            </div>
+        <input
+          type="text"
+          formControlName="postalCode"
+          placeholder="Entered text"
+          (keypress)="numbersOnly($event)"
+          maxlength="6"
+        />
 
-            <!-- City -->
+        <small
+          class="error"
+          *ngIf="f['postalCode'].errors?.['required'] && f['postalCode'].touched"
+        >
+          Postal Code is required.
+        </small>
 
-            <div class="form-group">
+        <small class="error" *ngIf="f['postalCode'].errors?.['pattern']">
+          Postal Code should be 6 digits.
+        </small>
+      </div>
 
-                <label>City</label>
+      <!-- Additional No -->
 
-                <select formControlName="city">
+      <div class="form-group">
+        <label>Add. No</label>
 
-                    <option value="">Select City</option>
+        <input
+          type="text"
+          formControlName="additionalNo"
+          placeholder="Entered text "
+          (keypress)="numbersOnly($event)"
+        />
 
-                    <option
-                        *ngFor="let city of cities"
-                        [value]="city">
+        <small class="error" *ngIf="f['additionalNo'].touched && f['additionalNo'].invalid">
+          Additional Number is required.
+        </small>
+      </div>
 
-                        {{city}}
+      <!-- Quarter -->
 
-                    </option>
+      <div class="form-group">
+        <label>Quarter</label>
 
-                </select>
+        <input type="text" placeholder="Entered text" formControlName="quarter" />
 
-                <small
-                    class="error"
-                    *ngIf="f['city'].touched && f['city'].invalid">
+        <small class="error" *ngIf="f['quarter'].touched && f['quarter'].invalid">
+          Quarter is required.
+        </small>
+      </div>
 
-                    City is required.
+      <!-- Latitude -->
 
-                </small>
+      <div class="form-group">
+        <label>Latitude</label>
 
-            </div>
+        <input type="number" placeholder="Enterd text" formControlName="latitude" />
 
-            <!-- Postal Code -->
+        <small class="error" *ngIf="f['latitude'].touched && f['latitude'].invalid">
+          Latitude is required.
+        </small>
+      </div>
 
-            <div class="form-group">
+      <!-- Longitude -->
 
-                <label>Postal Code</label>
+      <div class="form-group">
+        <label>Longitude</label>
 
-                <input
-                    type="text"
-                    formControlName="postalCode"
-                    placeholder="Entered text"
-                    (keypress)="numbersOnly($event)">
+        <input type="number" placeholder="Enterd text" formControlName="longitude" />
 
-                   <small
-                    class="error"
-                    *ngIf="f['postalCode'].errors?.['required'] && f['postalCode'].touched">
-
-                    Postal Code is required.
-
-                </small>
-
-                <small
-                    class="error"
-                    *ngIf="f['postalCode'].errors?.['pattern']">
-
-                    Postal Code should be 6 digits.
-
-                </small>
-
-            </div>
-
-            <!-- Additional No -->
-
-            <div class="form-group">
-
-                <label>Add. No</label>
-
-                <input
-                    type="text"
-                    formControlName="additionalNo"
-                    placeholder="Entered text "
-                    (keypress)="numbersOnly($event)">
-
-                <small
-                    class="error"
-                    *ngIf="f['additionalNo'].touched && f['additionalNo'].invalid">
-
-                    Additional Number is required.
-
-                </small>
-
-            </div>
-
-            <!-- Quarter -->
-
-            <div class="form-group">
-
-                <label>Quarter</label>
-
-                <input
-                    type="text"
-                    placeholder="Entered text"
-                    formControlName="quarter">
-
-                <small
-                    class="error"
-                    *ngIf="f['quarter'].touched && f['quarter'].invalid">
-
-                    Quarter is required.
-
-                </small>
-
-            </div>
-
-            <!-- Latitude -->
-
-            <div class="form-group">
-
-                <label>Latitude</label>
-
-                <input
-                    type="number"
-                    placeholder="Enterd text"
-                    formControlName="latitude">
-
-                <small
-                    class="error"
-                    *ngIf="f['latitude'].touched && f['latitude'].invalid">
-
-                    Latitude is required.
-
-                </small>
-
-            </div>
-
-            <!-- Longitude -->
-
-            <div class="form-group">
-
-                <label>Longitude</label>
-
-                <input
-                    type="number"
-                    placeholder="Enterd text"
-                    formControlName="longitude">
-
-                <small
-                    class="error"
-                    *ngIf="f['longitude'].touched && f['longitude'].invalid">
-
-                    Longitude is required.
-
-                </small>
-
-            </div>
-
-        </div>
-
-        <div class="form-actions">
-      <button type="button" class="draft-btn">Save a draft</button>
-
-      <div class="right-actions">
-        <button type="button" class="previous-btn" >Previous</button>
-        <!-- <button class="next-btn"routerLink="/third-layout/form" style="cursor: pointer;">Next</button> -->
-          <button type="submit" class="next-btn">
-    Next
-</button>
+        <small class="error" *ngIf="f['longitude'].touched && f['longitude'].invalid">
+          Longitude is required.
+        </small>
       </div>
     </div>
 
-    </form>
+    <div class="form-actions">
+      <button type="button" class="draft-btn">Save a draft</button>
 
+      <div class="right-actions">
+        <button type="button" class="previous-btn" routerLink="/third-layout/warehouse-information">
+          Previous
+        </button>
+        <!-- <button class="next-btn"routerLink="/third-layout/form" style="cursor: pointer;">Next</button> -->
+        <button type="submit" class="next-btn">Next</button>
+      </div>
+    </div>
+  </form>
 </div>

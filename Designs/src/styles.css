@@ -911,7 +911,6 @@ align-items: flex-start;
 gap: var(--Global-spacing-4xl, 32px);
 flex: 1 0 0;
 
-min-width: 0;
 
 }
 
@@ -920,6 +919,8 @@ min-width: 0;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--Global-spacing-3xl, 10px);
+  
+  
 }
 
 .breadcrumb{
@@ -927,6 +928,7 @@ min-width: 0;
   padding: var(--Global-spacing-none, 0);
   align-items: flex-start;
   gap: var(--Global-spacing-none, 0);
+  
 }
 
 .breadcrumbitem,.breadcrumbitem2{
@@ -2209,11 +2211,9 @@ stroke: var(--Text-text-on-color, #FFF);
 
 .main-frame{
 display: flex;
-padding: var(--Global-spacing-5xl, 40px) var(--Global-spacing-none, 0);
-flex-direction: column;
-align-items: flex-start;
-gap: var(--Global-spacing-4xl, 32px);
-flex: 1 0 0;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
 
 }
 /* nav bar -2 starts */
@@ -2686,11 +2686,14 @@ height: 24px;
 
 .warehouse-page {
   display: flex;
-  width: 1170px;
-  padding: 40px 16px;
-  align-items: flex-start;
-  gap: 40px;
-  box-sizing: border-box;
+width: 840px;
+padding: var(--Global-spacing-none, 0);
+flex-direction: column;
+align-items: flex-start;
+gap: var(--Global-spacing-4xl, 32px);
+flex-shrink: 0;
+padding:32px;
+    background:#fff;
   font-family: "IBM Plex Sans Arabic", Arial, sans-serif;
 }
 

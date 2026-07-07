@@ -107,13 +107,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { WarehouseInformation } from './warehouse-information/warehouse-information';
 import { BankInfo } from './bank-info/bank-info';
 
-
 import { BenefitService } from './benefit-service/benefit-service';
 
 import { WareHouseDimensions } from './ware-house-dimensions/ware-house-dimensions';
 import { WareHouseManagerInformation } from './ware-house-manager-information/ware-house-manager-information';
 import { AdditionalService } from './additional-service/additional-service';
 import { ProgressIndicator } from './shared/progress-indicator/progress-indicator';
+import { Summary } from './summary/summary';
 
 @NgModule({
   declarations: [
@@ -138,7 +138,7 @@ import { ProgressIndicator } from './shared/progress-indicator/progress-indicato
     Navbar3,
     WarehouseInformation,
     BankInfo,
-     Sidebar2,
+    Sidebar2,
     Warehousedetails,
     ThirdLayout,
     BenefitService,
@@ -146,8 +146,9 @@ import { ProgressIndicator } from './shared/progress-indicator/progress-indicato
     WareHouseManagerInformation,
     AdditionalService,
     ProgressIndicator,
+    Summary,
   ],
-  
+
   imports: [
     BrowserModule,
     ReactiveFormsModule,

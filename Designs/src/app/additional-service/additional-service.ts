@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Stepper } from '../services/stepper';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-additional-service',
@@ -12,7 +14,8 @@ export class AdditionalService {
   additionalService:FormGroup;
 
   constructor(private fb:FormBuilder,
-    private stepper:Stepper){
+    private stepper:Stepper,
+  private router:Router){
     this.additionalService=this.fb.group({
 
         financiallySound: ['', Validators.required],
@@ -46,6 +49,9 @@ export class AdditionalService {
     }
 
     console.log(this.additionalService.value);
+
+    this.additionalService.reset();
+     this.router.navigate(['/third-layout/summary']);
 
   }
 

@@ -6,7 +6,7 @@
     align-items: flex-start;
     padding: 40px;
     box-sizing: border-box;
-    background: #F8FAFC;
+    background-color: white;
 }
 
 .third-layout-container app-form {

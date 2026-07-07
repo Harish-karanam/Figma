@@ -1,26 +1,26 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { Stepper } from '../services/stepper';
 
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './form.html',
   styleUrls: ['./form.css']
 })
 export class Form implements OnInit {
   warehouseOwnershipForm!: FormGroup;
-
   showFullForm = false;
+  selectedOption = '';
 
   constructor(
     private fb: FormBuilder,
-    private router: Router
-  ) {}
-
-  ngOnInit(): void {
+    private router: Router,
+    private stepper: Stepper
+  ) {
     this.warehouseOwnershipForm = this.fb.group({
       leasedWarehouse: ['yes', Validators.required],
       ownerType: ['', Validators.required],
@@ -36,10 +36,26 @@ export class Form implements OnInit {
       agreementFile: [null, Validators.required]
     });
   }
-  
 
-  showDetailsForm(): void {
-    this.showFullForm = true;
+  ngOnInit(): void {
+    this.stepper.setStep(3);
+
+    this.warehouseOwnershipForm.get('leasedWarehouse')?.valueChanges.subscribe(val => {
+      this.selectedOption = val;
+      this.showFullForm = val === 'yes';
+    });
+
+    // set initial value
+    this.selectedOption = this.warehouseOwnershipForm.get('leasedWarehouse')?.value;
+    this.showFullForm = this.selectedOption === 'yes';
+  }
+
+  handleNext(): void {
+    if (this.selectedOption === 'no') {
+      this.router.navigate(['/third-layout/ware-house-dimensions']);
+    } else {
+      this.showFullForm = true;
+    }
   }
 
   backToSimpleForm(): void {
@@ -65,6 +81,6 @@ export class Form implements OnInit {
       return;
     }
 
-    this.router.navigate(['/third-layout/bank-info']);
+    this.router.navigate(['/third-layout/ware-house-dimensions']);
   }
 }

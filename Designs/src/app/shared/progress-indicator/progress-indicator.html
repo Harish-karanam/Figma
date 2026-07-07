@@ -1,56 +1,61 @@
-<!-- <div class="stepper">
+
+
+<div class="progress-indicator-container">
 
   <div
-      class="step"
-      *ngFor="let step of steps; let i=index">
+    *ngFor="let step of steps; let i = index"
+    class="progress-indicator-item">
 
+    <!-- Stepper column -->
+    <div class="progress-indicator-stepper">
+
+      <!-- Circle -->
+      <div class="stepper-base">
+
+        <!-- Completed -->
+        <div class="stepper-circle completed" *ngIf="isCompleted(i)">
+          <div class="stepper-circle-tick">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M13.0119 3.97231C13.2117 4.16298 13.219 4.47947 13.0284 4.67922L6.02835 12.0126C5.9354 12.1099 5.8071 12.1657 5.67249 12.1673C5.53787 12.1688 5.40832 12.1161 5.31312 12.0209L2.97979 9.68754C2.78453 9.49228 2.78453 9.17569 2.97979 8.98043C3.17505 8.78517 3.49163 8.78517 3.6869 8.98043L5.65836 10.9519L12.305 3.98875C12.4957 3.789 12.8122 3.78164 13.0119 3.97231Z"
+                fill="white" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Current -->
+        <div class="stepper-circle current" *ngIf="isCurrent(i)">
+          <p class="stepper-circle-number">{{ i + 1 }}</p>
+        </div>
+
+        <!-- Future -->
+        <div class="stepper-circle future" *ngIf="isFuture(i)">
+          <p class="stepper-circle-number future-number">{{ i + 1 }}</p>
+        </div>
+
+      </div>
+
+      <!-- Line (hide for last step) -->
       <div
-      class="circle"
-
-      [class.completed]="i+1 < currentStep"
-
-      [class.active]="i+1==currentStep">
-
-        {{i+1}}
-
+        class="stepper-rectangle-line"
+        [class.line-completed]="isCompleted(i)"
+        [class.line-pending]="isCurrent(i) || isFuture(i)"
+        *ngIf="!isLastStep(i)">
       </div>
 
-      <div class="text">
+    </div>
 
-        {{step}}
-
-      </div>
+    <!-- Text column -->
+    <div class="progress-indicator-text-container">
+      <span
+        class="stepper-text"
+        [class.text-completed]="isCompleted(i)"
+        [class.text-current]="isCurrent(i)"
+        [class.text-future]="isFuture(i)">
+        {{ step }}
+      </span>
+    </div>
 
   </div>
-
-</div> -->
-
-<div class="progress-indicator-complete">
-  <div class="stepper">
-
-  <div
-      class="step"
-      *ngFor="let step of steps; let i=index">
-
-      <div
-      class="circle"
-
-      [class.completed]="i+1 < currentStep"
-
-      [class.active]="i+1==currentStep">
-
-        {{i+1}}
-
-      </div>
-
-      <div class="text">
-
-        {{step}}
-
-      </div>
-
-  </div>
-
-</div>
 
 </div>

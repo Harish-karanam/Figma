@@ -28,21 +28,25 @@ export class BenefitService {
 
       warehouseName: ['', [
         Validators.required,
+        Validators.minLength(4)
      // Validators.pattern('^[a-zA-Z]+$'),
     ],],
 
       buildingNumber: ['', [
         Validators.required,
+         Validators.minLength(4)
         // Validators.pattern('^[0-9]+$')
       ]],
 
        streetName: ['', [
     Validators.required,
+    Validators.minLength(4)
    // Validators.pattern('^[a-zA-Z0-9 ]+$')
   ]],
 
   region: ['', [
     Validators.required,
+     Validators.minLength(4)
   //  Validators.pattern('^[a-zA-Z ]+$')
   ]],
 

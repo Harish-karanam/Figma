@@ -7,23 +7,23 @@
     <div class="leased-section">
       <label class="main-label">Have you leased the warehouse?</label>
 
-      <label class="radio-option">
-        <input type="radio" value="yes" formControlName="leasedWarehouse">
-        Yes
-      </label>
+     <label class="radio-option">
+  <input type="radio" value="yes" formControlName="leasedWarehouse" >
+  Yes
+</label>
 
-      <label class="radio-option">
-        <input type="radio" value="no" formControlName="leasedWarehouse">
-        No
-      </label>
+<label class="radio-option">
+  <input type="radio" value="no" formControlName="leasedWarehouse" >
+  No
+</label>
     </div>
 
     <div class="form-actions">
       <button type="button" class="draft-btn">Save a draft</button>
 
       <div class="right-actions">
-        <button type="button" class="previous-btn">Previous</button>
-        <button type="button" class="next-btn" (click)="showDetailsForm()">Next</button>
+         <button type="button" class="previous-btn" routerLink="/third-layout/benefit-service"  >Previous</button>
+        <button type="submit" class="next-btn">Next</button>
       </div>
     </div>
   </div>
@@ -175,7 +175,7 @@
       <button type="button" class="draft-btn">Save a draft</button>
 
       <div class="right-actions">
-        <button type="button" class="previous-btn" (click)="backToSimpleForm()">Previous</button>
+        <button type="button" class="previous-btn" routerLink="/third-layout/benefit-service"  >Previous</button>
         <button type="submit" class="next-btn">Next</button>
       </div>
     </div>
