@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Stepper } from '../services/stepper';
 import { Router } from '@angular/router';
+import { ApplicationDataService } from '../services/application-data';
+
 
 @Component({
   selector: 'app-benefit-service',
@@ -21,7 +23,7 @@ export class BenefitService {
   ];
 
   constructor(private fb: FormBuilder,
-    private stepper:Stepper, private router:Router
+    private stepper:Stepper, private router:Router, private applicationDataService:ApplicationDataService
   ) {
 
     this.warehouseForm = this.fb.group({
@@ -79,9 +81,17 @@ export class BenefitService {
 
     });
   }
+  
   ngOnInit(){
 
+
 this.stepper.setStep(2);
+
+  const savedData = this.applicationDataService.getData().addressInfo;
+
+  if (savedData) {
+    this.warehouseForm.patchValue(savedData);
+  }
 
 }
   
@@ -123,22 +133,23 @@ lettersOnly(event: KeyboardEvent): void {
 
   }
 
-  next() {
+ next() {
 
-    if (this.warehouseForm.invalid) {
+  if (this.warehouseForm.invalid) {
 
-      this.warehouseForm.markAllAsTouched();
+    this.warehouseForm.markAllAsTouched();
 
-      return;
-    }
-
-    console.log(this.warehouseForm.value);
-
-    this.warehouseForm.reset();
-    this.router.navigate(['/third-layout/form'])
-    
-
+    return;
   }
+
+  this.applicationDataService.setData(
+    'addressInfo',
+    this.warehouseForm.value
+  );
+
+  this.router.navigate(['/third-layout/form']);
+
+}
 
 }
 

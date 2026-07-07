@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { Stepper } from '../services/stepper';
+import { ApplicationDataService } from '../services/application-data';
 
 @Component({
   selector: 'app-form',
@@ -19,7 +20,8 @@ export class Form implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private stepper: Stepper
+    private stepper: Stepper,
+    private applicationDataService: ApplicationDataService
   ) {
     this.warehouseOwnershipForm = this.fb.group({
       leasedWarehouse: ['yes', Validators.required],
@@ -39,6 +41,12 @@ export class Form implements OnInit {
 
   ngOnInit(): void {
     this.stepper.setStep(3);
+    
+    const savedData = this.applicationDataService.getData().ownershipInfo;
+
+    if (savedData) {
+      this.warehouseOwnershipForm.patchValue(savedData);
+    }
 
     this.warehouseOwnershipForm.get('leasedWarehouse')?.valueChanges.subscribe(val => {
       this.selectedOption = val;
@@ -80,6 +88,10 @@ export class Form implements OnInit {
       this.warehouseOwnershipForm.markAllAsTouched();
       return;
     }
+     this.applicationDataService.setData(
+      'ownershipInfo',
+      this.warehouseOwnershipForm.value
+    );
 
     this.router.navigate(['/third-layout/ware-house-dimensions']);
   }

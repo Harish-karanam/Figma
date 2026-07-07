@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ApplicationDataService } from '../services/application-data';
 import { Stepper } from '../services/stepper';
 
 @Component({
@@ -7,13 +8,17 @@ import { Stepper } from '../services/stepper';
   templateUrl: './summary.html',
   styleUrl: './summary.css',
 })
-export class Summary {
+export class Summary implements OnInit {
 
-  constructor( private stepper:Stepper){
+  data: any;
 
+  constructor(private applicationDataService: ApplicationDataService,private stepper:Stepper) {}
+
+  ngOnInit() {
+    this.data = this.applicationDataService.getData();
+
+    console.log(this.data);
+    this.stepper.setStep(8)
+    
   }
-  ngOnInit(){
-    this.stepper.setStep(8);
-  }
-
 }

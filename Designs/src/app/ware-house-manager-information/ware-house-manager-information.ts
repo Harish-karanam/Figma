@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Stepper } from '../services/stepper';
 import { Router } from '@angular/router';
+import { ApplicationDataService } from '../services/application-data';
 
 @Component({
   selector: 'app-ware-house-manager-information',
@@ -34,7 +35,8 @@ export class WareHouseManagerInformation {
 
   constructor(private fb: FormBuilder,
      private stepper:Stepper,
-     private router:Router
+     private router:Router,
+     private applicationDataService: ApplicationDataService
   ){
     this.warehousemanagerinformation=this.fb.group({
 
@@ -71,6 +73,11 @@ export class WareHouseManagerInformation {
 
   ngOnInit(){
     this.stepper.setStep(5);
+    const savedData = this.applicationDataService.getData().managerInfo;
+
+  if (savedData) {
+    this.warehousemanagerinformation.patchValue(savedData);
+  }
   }
 
   //numbers
@@ -130,7 +137,11 @@ lettersOnly(event: KeyboardEvent): void {
       console.log(this.warehousemanagerinformation.value);
      
 
-        this.warehousemanagerinformation.reset();
+        // this.warehousemanagerinformation.reset();
+        this.applicationDataService.setData(
+    'managerInfo',
+    this.warehousemanagerinformation.value
+  );
 
       this.router.navigate(['/third-layout/bank-info']);
       

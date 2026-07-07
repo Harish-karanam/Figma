@@ -114,8 +114,10 @@
 }
 
 .error {
-  color: #b42318;
+  display: block;
+  color: #d92d20;
   font-size: 12px;
+  line-height: 16px;
   margin-top: 4px;
 }
 
@@ -154,4 +156,26 @@
   background: #1b8354;
   border: 1px solid #1b8354;
   color: #fff;
+}
+
+
+.error{
+    color:red;
+    font-size:12px;
+    margin-top:5px;
+    display:block;
+}
+
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched{
+
+    border:1px solid red;
+
+}
+
+input.ng-valid.ng-touched,
+select.ng-valid.ng-touched{
+
+    border:1px solid green;
+
 }
