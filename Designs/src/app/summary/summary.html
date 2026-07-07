@@ -1,0 +1,234 @@
+<div class="summary-outerframe">
+
+  <div class="step-sidebar">
+    <!-- Add step sidebar here later -->
+  </div>
+
+  <div class="summary-information-frame">
+
+    <div class="summary-heading">
+      <h2>Summary</h2>
+      <p>Review the below information.</p>
+    </div>
+
+    <div class="summary-section">
+      <div class="section-header">
+        <h3>Warehouse Information</h3>
+        <span>⌃</span>
+      </div>
+
+      <div class="summary-grid">
+        <div class="info-item"><label>FIN</label><p>3100286322000007</p></div>
+        <div class="info-item"><label>Business Name</label><p>شركة داتة طريق للتجارة</p></div>
+        <div class="info-item"><label>Warehouse Usage Purpose</label><p>Storage of the Excise Goods</p></div>
+        <div class="info-item"><label>What Type of Excise Goods will be manufactured or stored?</label><p>Tobacco & Related Products</p></div>
+      </div>
+    </div>
+
+    <div class="summary-section">
+      <div class="section-header">
+        <h3>Warehouse Identification & Address</h3>
+        <span>⌃</span>
+      </div>
+
+     <div class="summary-grid">
+
+    <div class="info-item">
+        <label>Warehouse Name</label>
+        <p>{{ data.addressInfo.warehouseName }}</p>
+    </div>
+
+    <div class="info-item">
+        <label>Building Number</label>
+        <p>{{ data.addressInfo.buildingNumber }}</p>
+    </div>
+
+    <div class="info-item">
+        <label>Street Name</label>
+        <p>{{ data.addressInfo.streetName }}</p>
+    </div>
+
+    <div class="info-item">
+        <label>Region/District</label>
+        <p>{{ data.addressInfo.region }}</p>
+    </div>
+
+    <div class="info-item">
+        <label>City</label>
+        <p>{{ data.addressInfo.city }}</p>
+    </div>
+
+    <div class="info-item">
+        <label>Postal Code</label>
+        <p>{{ data.addressInfo.postalCode }}</p>
+    </div>
+
+    <div class="info-item">
+        <label>Additional No</label>
+        <p>{{ data.addressInfo.additionalNo }}</p>
+    </div>
+
+    <div class="info-item">
+        <label>Quarter</label>
+        <p>{{ data.addressInfo.quarter }}</p>
+    </div>
+
+    <div class="info-item">
+        <label>Latitude</label>
+        <p>{{ data.addressInfo.latitude }}</p>
+    </div>
+
+    <div class="info-item">
+        <label>Longitude</label>
+        <p>{{ data.addressInfo.longitude }}</p>
+    </div>
+
+</div>
+
+    <div class="summary-section">
+      <div class="section-header">
+        <h3>Warehouse Ownership</h3>
+        <span>⌃</span>
+      </div>
+
+      <div class="summary-grid">
+        <div class="info-item"><label>Leased Warehouse</label><p>{{ data.ownershipInfo.leasedWarehouse }}</p></div>
+        <div class="info-item"><label>Scanned copy of the agreement for the lease</label><p>{{ data.ownershipInfo.agreementFile?.name }}</p></div>
+      </div>
+    </div>
+
+    <div class="summary-section">
+      <div class="section-header">
+        <h3>Warehouse Dimensions</h3>
+        <span>⌃</span>
+      </div>
+
+      <div class="summary-grid">
+        <div class="info-item"><label>Length</label><p>{{ data.dimensionInfo.Length }}</p></div>
+        <div class="info-item"><label>Width</label><p>{{ data.dimensionInfo.Width }}</p></div>
+        <div class="info-item"><label>Height</label><p>{{ data.dimensionInfo.Height }}</p></div>
+        <div class="info-item"><label>Cubic Meters</label><p>{{ data.dimensionInfo.CubicMeters }}</p></div>
+        <div class="info-item"><label>Supporting document</label><p>File-name.csv</p></div>
+      </div>
+    </div>
+
+   <div class="summary-section">
+  <div class="section-header">
+    <h3>Warehouse Manager Information</h3>
+    <span>⌃</span>
+  </div>
+
+  <div class="summary-grid">
+    <div class="info-item"><label>ID Type</label><p>{{ data.managerInfo.idTypes || '-' }}</p></div>
+    <div class="info-item"><label>ID Number</label><p>{{ data.managerInfo.idNumber || '-' }}</p></div>
+    <div class="info-item"><label>Nationality of the Owner</label><p>{{ data.managerInfo.nationalityOwner || '-' }}</p></div>
+    <div class="info-item"><label>Date of Hiring</label><p>{{ data.managerInfo.dateOfHiring || '-' }}</p></div>
+    <div class="info-item"><label>Title</label><p>{{ data.managerInfo.title || '-' }}</p></div>
+    <div class="info-item"><label>First Name</label><p>{{ data.managerInfo.firstName || '-' }}</p></div>
+    <div class="info-item"><label>Surname</label><p>{{ data.managerInfo.surName || '-' }}</p></div>
+    <div class="info-item"><label>Middle Name</label><p>{{ data.managerInfo.middleName || '-' }}</p></div>
+    <div class="info-item"><label>Father's Name</label><p>{{ data.managerInfo.fatherName || '-' }}</p></div>
+    <div class="info-item"><label>Grandfather's Name</label><p>{{ data.managerInfo.grandFatherName || '-' }}</p></div>
+    <div class="info-item"><label>Mobile</label><p>{{ data.managerInfo.mobileNo || '-' }}</p></div>
+    <div class="info-item"><label>Email</label><p>{{ data.managerInfo.email || '-' }}</p></div>
+  </div>
+</div>
+
+    <div class="summary-section">
+      <div class="section-header">
+        <h3>Bank Guarantee Information</h3>
+        <span>⌃</span>
+      </div>
+
+      <table class="summary-table">
+        <thead>
+          <tr>
+            <th>Product Type</th>
+            <th>Good Type</th>
+            <th>Quantity</th>
+            <th>Unit of Measure</th>
+            <th>Total RSP Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Retail Soft Category Value</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>45927.50 SAR</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="summary-section">
+      <div class="section-header">
+        <h3>Additional Information</h3>
+        <span>⌃</span>
+      </div>
+
+      <div class="summary-grid single">
+        <div class="info-item"><label>Previously issued permits</label><p>{{ data.additionalInfo.financiallySound }}</p></div>
+        <div class="info-item"><label>Camera and Financial Details</label><p>{{ data.additionalInfo.financialCrimes }}</p></div>
+        <div class="info-item"><label>Have you Accessed the System</label><p>{{ data.additionalInfo.administrativeSystem }}</p></div>
+        <div class="info-item"><label>Have Safety and Security Measures in Place</label><p>{{ data.additionalInfo.safetyMeasures }}</p>
+      </div>
+    </div>
+
+    <div class="declaration-section">
+
+    <div class="declaration-title">
+        <input type="checkbox">
+
+        <div class="declaration-content">
+            <h3>Declaration</h3>
+
+            <p>
+                I hereby declare that the information provided is true,
+                accurate and complete. I hereby vow to immediately notify
+                the Authority should any of the information, data and
+                documents submitted changes; and I authorise the Authority
+                to verify the information, data or documents provided in
+                any way it sees fit including coordinating with any
+                government entities and for third parties. I also understand
+                that if any of the information, data or documents submitted
+                are found to be false or misleading I will be held legally
+                liable.
+            </p>
+        </div>
+    </div>
+
+    <div class="terms-checkbox">
+        <input type="checkbox">
+
+        <label>
+            I agree with
+            <a href="#">Terms &amp; Conditions</a>
+        </label>
+    </div>
+
+</div>
+
+<div class="summary-actions">
+
+    <button class="draft-btn">
+        Save a draft
+    </button>
+
+    <div class="right-actions">
+        <button class="previous-btn"
+                routerLink="/third-layout/additional-service">
+            Previous
+        </button>
+
+        <button class="next-btn">
+            Next
+        </button>
+    </div>
+
+</div>
+
+  </div>
+
+</div>

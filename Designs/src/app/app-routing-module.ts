@@ -12,12 +12,13 @@ import { ThirdLayout } from './layouts/third-layout/third-layout';
 import { WarehouseInformation } from './warehouse-information/warehouse-information';
 import { BankInfo } from './bank-info/bank-info';
 
-import { Warehousedetails } from './warehousedetails/warehousedetails';
+
 
 import { BenefitService } from './benefit-service/benefit-service';
 import { WareHouseDimensions } from './ware-house-dimensions/ware-house-dimensions';
 import { WareHouseManagerInformation } from './ware-house-manager-information/ware-house-manager-information';
 import { AdditionalService } from './additional-service/additional-service';
+import { Summary } from './summary/summary';
 
 // const routes: Routes = [
 //   {
@@ -98,10 +99,7 @@ const routes: Routes = [
     path: 'second-layout',
     component: SecondLayout,
     children: [
-      {
-        path:'warehousedetails',
-        component:Warehousedetails
-      },
+     
       
        {
         path: 'sidebar-2',
@@ -142,6 +140,10 @@ const routes: Routes = [
       {
         path:'additional-service',
         component:AdditionalService
+      },
+      {
+        path:'summary',
+        component:Summary
       }
      
       

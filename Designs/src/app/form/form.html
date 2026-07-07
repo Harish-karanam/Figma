@@ -22,7 +22,7 @@
       <button type="button" class="draft-btn">Save a draft</button>
 
       <div class="right-actions">
-        <button type="button" class="previous-btn">Previous</button>
+        <button type="button" class="previous-btn" (click)="goToBenefitService()">Previous</button>
         <button type="button" class="next-btn" (click)="showDetailsForm()">Next</button>
       </div>
     </div>
@@ -55,7 +55,8 @@
           <option value="individual">Individual</option>
           <option value="company">Company</option>
         </select>
-        <small class="error" *ngIf="warehouseOwnershipForm.get('ownerType')?.touched && warehouseOwnershipForm.get('ownerType')?.hasError('required')">
+
+        <small class="error" *ngIf="isInvalid('ownerType')">
           Owner Type is required
         </small>
       </div>
@@ -63,11 +64,17 @@
       <div class="form-field">
         <label>ID Number</label>
         <input type="text" formControlName="idNumber" placeholder="Entered text">
-        <small class="error" *ngIf="warehouseOwnershipForm.get('idNumber')?.touched && warehouseOwnershipForm.get('idNumber')?.hasError('required')">
+
+        <small class="error" *ngIf="isInvalid('idNumber') && warehouseOwnershipForm.get('idNumber')?.hasError('required')">
           ID Number is required
         </small>
-        <small class="error" *ngIf="warehouseOwnershipForm.get('idNumber')?.touched && warehouseOwnershipForm.get('idNumber')?.hasError('pattern')">
+
+        <small class="error" *ngIf="isInvalid('idNumber') && warehouseOwnershipForm.get('idNumber')?.hasError('onlyNumbers')">
           ID Number must contain only numbers
+        </small>
+
+        <small class="error" *ngIf="isInvalid('idNumber') && warehouseOwnershipForm.get('idNumber')?.hasError('exactLength')">
+          ID Number must contain exactly 10 digits
         </small>
       </div>
 
@@ -79,43 +86,55 @@
           <option value="iqama">Iqama</option>
           <option value="passport">Passport</option>
         </select>
-        <small class="error" *ngIf="warehouseOwnershipForm.get('idType')?.touched && warehouseOwnershipForm.get('idType')?.hasError('required')">
+
+        <small class="error" *ngIf="isInvalid('idType')">
           ID Type is required
         </small>
       </div>
 
       <div class="form-field mobile-field">
         <label>Mobile Number</label>
+
         <div class="mobile-input">
           <span>+966</span>
           <input type="text" formControlName="mobileNumber" placeholder="000000000">
         </div>
-        <small class="error" *ngIf="warehouseOwnershipForm.get('mobileNumber')?.touched && warehouseOwnershipForm.get('mobileNumber')?.hasError('required')">
+
+        <small class="error" *ngIf="isInvalid('mobileNumber') && warehouseOwnershipForm.get('mobileNumber')?.hasError('required')">
           Mobile number is required
         </small>
-        <small class="error" *ngIf="warehouseOwnershipForm.get('mobileNumber')?.touched && warehouseOwnershipForm.get('mobileNumber')?.hasError('pattern')">
-          Mobile number must contain only 9 digits
+
+        <small class="error" *ngIf="isInvalid('mobileNumber') && warehouseOwnershipForm.get('mobileNumber')?.hasError('onlyNumbers')">
+          Mobile number must contain only numbers
+        </small>
+
+        <small class="error" *ngIf="isInvalid('mobileNumber') && warehouseOwnershipForm.get('mobileNumber')?.hasError('exactLength')">
+          Mobile number must contain exactly 9 digits
         </small>
       </div>
 
       <div class="form-field">
         <label>Nationality of the Owner</label>
         <input type="text" formControlName="nationality" placeholder="Entered text">
-        <small class="error" *ngIf="warehouseOwnershipForm.get('nationality')?.touched && warehouseOwnershipForm.get('nationality')?.hasError('required')">
+
+        <small class="error" *ngIf="isInvalid('nationality') && warehouseOwnershipForm.get('nationality')?.hasError('required')">
           Nationality is required
         </small>
-        <small class="error" *ngIf="warehouseOwnershipForm.get('nationality')?.touched && warehouseOwnershipForm.get('nationality')?.hasError('pattern')">
-          Nationality must contain only letters
+
+        <small class="error" *ngIf="isInvalid('nationality') && warehouseOwnershipForm.get('nationality')?.hasError('pattern')">
+          Nationality must contain only alphabets
         </small>
       </div>
 
       <div class="form-field">
         <label>Email</label>
         <input type="email" formControlName="email" placeholder="Entered text">
-        <small class="error" *ngIf="warehouseOwnershipForm.get('email')?.touched && warehouseOwnershipForm.get('email')?.hasError('required')">
+
+        <small class="error" *ngIf="isInvalid('email') && warehouseOwnershipForm.get('email')?.hasError('required')">
           Email is required
         </small>
-        <small class="error" *ngIf="warehouseOwnershipForm.get('email')?.touched && warehouseOwnershipForm.get('email')?.hasError('email')">
+
+        <small class="error" *ngIf="isInvalid('email') && warehouseOwnershipForm.get('email')?.hasError('email')">
           Enter a valid email address
         </small>
       </div>
@@ -123,18 +142,25 @@
       <div class="form-field">
         <label>Name of the Owner</label>
         <input type="text" formControlName="ownerName" placeholder="Entered text">
-        <small class="error" *ngIf="warehouseOwnershipForm.get('ownerName')?.touched && warehouseOwnershipForm.get('ownerName')?.hasError('required')">
+
+        <small class="error" *ngIf="isInvalid('ownerName') && warehouseOwnershipForm.get('ownerName')?.hasError('required')">
           Owner name is required
         </small>
-        <small class="error" *ngIf="warehouseOwnershipForm.get('ownerName')?.touched && warehouseOwnershipForm.get('ownerName')?.hasError('pattern')">
-          Owner name must contain only letters
+
+        <small class="error" *ngIf="isInvalid('ownerName') && warehouseOwnershipForm.get('ownerName')?.hasError('pattern')">
+          Owner name must contain only alphabets
+        </small>
+
+        <small class="error" *ngIf="isInvalid('ownerName') && warehouseOwnershipForm.get('ownerName')?.hasError('maxlength')">
+          Owner name must not exceed 30 characters
         </small>
       </div>
 
       <div class="form-field">
         <label>Valid From</label>
         <input type="date" formControlName="validFrom">
-        <small class="error" *ngIf="warehouseOwnershipForm.get('validFrom')?.touched && warehouseOwnershipForm.get('validFrom')?.hasError('required')">
+
+        <small class="error" *ngIf="isInvalid('validFrom')">
           Valid From is required
         </small>
       </div>
@@ -142,7 +168,8 @@
       <div class="form-field">
         <label>When did you Lease / Rent the warehouse?</label>
         <input type="date" formControlName="leaseDate">
-        <small class="error" *ngIf="warehouseOwnershipForm.get('leaseDate')?.touched && warehouseOwnershipForm.get('leaseDate')?.hasError('required')">
+
+        <small class="error" *ngIf="isInvalid('leaseDate')">
           Lease date is required
         </small>
       </div>
@@ -150,7 +177,8 @@
       <div class="form-field">
         <label>What is the Expiry Date of the Lease / Rent Agreement?</label>
         <input type="date" formControlName="expiryDate">
-        <small class="error" *ngIf="warehouseOwnershipForm.get('expiryDate')?.touched && warehouseOwnershipForm.get('expiryDate')?.hasError('required')">
+
+        <small class="error" *ngIf="isInvalid('expiryDate')">
           Expiry date is required
         </small>
       </div>
@@ -159,6 +187,7 @@
 
     <div class="upload-section">
       <label>Scanned Copy of the Agreement for Lease</label>
+
       <p>
         Maximum file size allowed is 2MB, supported file formats include .jpg,
         .png, and .pdf.
@@ -166,7 +195,7 @@
 
       <input type="file" accept=".jpg,.jpeg,.png,.pdf" (change)="onFileChange($event)">
 
-      <small class="error" *ngIf="warehouseOwnershipForm.get('agreementFile')?.touched && warehouseOwnershipForm.get('agreementFile')?.hasError('required')">
+      <small class="error" *ngIf="isInvalid('agreementFile')">
         Please upload the agreement
       </small>
     </div>

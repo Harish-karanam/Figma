@@ -2334,16 +2334,7 @@ flex-shrink: 0;
 height: 12.917px;
 }
 
-.divider-review-template{
-    display: flex;
-width: 1440px;
-height: 1px;
-max-height: 1px;
-justify-content: center;
-align-items: center;
-position: absolute;
-bottom: 0;
-}
+
 
 .navigation-header-review-template{
     display: flex;
@@ -2356,13 +2347,7 @@ align-items: center;
 background: var(--Background-background-menu, #FFF);
 }
 
-.second-divider-review-template{
-    width: 1440px;
-height: 1px;
-position: absolute;
-bottom: 0;
-background: var(--Colors-Neutral-300, #D2D6DB);
-}
+
 
 .header-content-2-review-template{
     display: flex;

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Stepper } from '../services/stepper';
+import { Router } from '@angular/router';
+import { ApplicationDataService } from '../services/application-data';
 
 @Component({
   selector: 'app-ware-house-dimensions',
@@ -11,8 +13,9 @@ import { Stepper } from '../services/stepper';
 export class WareHouseDimensions {
   warehouseDimension:FormGroup;
 
+
   constructor(private fb:FormBuilder,
-    private stepper:Stepper
+    private stepper:Stepper,  private applicationDataService: ApplicationDataService,private router:Router
   ){
     this.warehouseDimension=this.fb.group({
 
@@ -49,6 +52,12 @@ export class WareHouseDimensions {
 
   ngOnInit(){
     this.stepper.setStep(4);
+    const savedData = this.applicationDataService.getData().dimensionInfo;
+
+  if (savedData) {
+    this.warehouseDimension.patchValue(savedData);
+  }
+
   }
 
  numbersOnly(event: KeyboardEvent): void {
@@ -82,14 +91,17 @@ export class WareHouseDimensions {
       
     }
 
-    next(){
-      if(this.warehouseDimension.invalid){
-        this.warehouseDimension.markAllAsTouched();
-        return;
+    next() {
+  if (this.warehouseDimension.invalid) {
+    this.warehouseDimension.markAllAsTouched();
+    return;
+  }
 
-      }
-      console.log(this.warehouseDimension.value);
-      this.warehouseDimension.reset();
-      
-    }
+  this.applicationDataService.setData(
+    'dimensionInfo',
+    this.warehouseDimension.value
+  );
+
+  this.router.navigate(['/third-layout/ware-house-manager-information']);
+}
 }

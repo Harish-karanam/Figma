@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Stepper } from '../services/stepper';
 import { Router } from '@angular/router';
-
+import { ApplicationDataService } from '../services/application-data';
 @Component({
   selector: 'app-ware-house-manager-information',
   standalone: false,
@@ -34,7 +34,8 @@ export class WareHouseManagerInformation {
 
   constructor(private fb: FormBuilder,
      private stepper:Stepper,
-     private router:Router
+     private router:Router,
+     private applicationDataService:ApplicationDataService
   ){
     this.warehousemanagerinformation=this.fb.group({
 
@@ -57,10 +58,15 @@ export class WareHouseManagerInformation {
 
   }
 
-  ngOnInit(){
-    this.stepper.setStep(5);
-  }
+  ngOnInit() {
+  this.stepper.setStep(5);
 
+  const savedData = this.applicationDataService.getData().managerInfo;
+
+  if (savedData) {
+    this.warehousemanagerinformation.patchValue(savedData);
+  }
+}
   //numbers
   numbersOnly(event: KeyboardEvent): void {
   const input = event.target as HTMLInputElement;
@@ -109,18 +115,17 @@ lettersOnly(event: KeyboardEvent): void {
       
     }
 
-    next(){
-      if(this.warehousemanagerinformation.invalid){
-        this.warehousemanagerinformation.markAllAsTouched();
-        return;
+  next() {
+  if (this.warehousemanagerinformation.invalid) {
+    this.warehousemanagerinformation.markAllAsTouched();
+    return;
+  }
 
-      }
-      console.log(this.warehousemanagerinformation.value);
-      this.warehousemanagerinformation.reset();
+  this.applicationDataService.setData(
+    'managerInfo',
+    this.warehousemanagerinformation.value
+  );
 
-        this.warehousemanagerinformation.reset();
-
-      this.router.navigate(['/third-layout/bank-info']);
-      
-    }
+  this.router.navigate(['/third-layout/bank-info']);
+}
 }

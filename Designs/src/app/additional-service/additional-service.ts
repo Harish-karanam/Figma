@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Stepper } from '../services/stepper';
+import { ApplicationDataService } from '../services/application-data';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-additional-service',
@@ -12,7 +15,9 @@ export class AdditionalService {
   additionalService:FormGroup;
 
   constructor(private fb:FormBuilder,
-    private stepper:Stepper){
+    private stepper:Stepper,
+  private applicationDataService:ApplicationDataService,
+private router:Router){
     this.additionalService=this.fb.group({
 
         financiallySound: ['', Validators.required],
@@ -30,23 +35,32 @@ export class AdditionalService {
     })
 
   }
+ngOnInit() {
+  this.stepper.setStep(7);
 
-  ngOnInit(){
-    this.stepper.setStep(7);
+  const savedData = this.applicationDataService.getData().additionalInfo;
+
+  if (savedData) {
+    this.additionalService.patchValue(savedData);
   }
+}
     get f() {
     return this.additionalService.controls;
   }
 
   next() {
 
-    if (this.additionalService.invalid) {
-      this.additionalService.markAllAsTouched();
-      return;
-    }
-
-    console.log(this.additionalService.value);
-
+  if (this.additionalService.invalid) {
+    this.additionalService.markAllAsTouched();
+    return;
   }
+
+  this.applicationDataService.setData(
+    'additionalInfo',
+    this.additionalService.value
+  );
+
+  this.router.navigate(['/third-layout/summary']);
+}
 
 }

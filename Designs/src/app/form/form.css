@@ -73,12 +73,19 @@
   box-sizing: border-box;
 }
 
+.form-field input:focus,
+.form-field select:focus {
+  outline: none;
+  border-color: #1b8354;
+}
+
 .mobile-input {
   display: flex;
   height: 40px;
   border: 1px solid #9da4ae;
   border-radius: 4px;
   overflow: hidden;
+  background: #fff;
 }
 
 .mobile-input span {
@@ -86,12 +93,20 @@
   align-items: center;
   padding: 0 12px;
   border-right: 1px solid #d2d6db;
+  color: #161616;
+  font-size: 14px;
 }
 
 .mobile-input input {
   flex: 1;
   border: none;
   height: 100%;
+  padding: 8px 12px;
+}
+
+.mobile-input input:focus {
+  outline: none;
+  border: none;
 }
 
 .upload-section {
@@ -111,12 +126,6 @@
   color: #6c737f;
   font-size: 13px;
   line-height: 18px;
-}
-
-.error {
-  color: #b42318;
-  font-size: 12px;
-  margin-top: 4px;
 }
 
 .form-actions {
@@ -154,4 +163,33 @@
   background: #1b8354;
   border: 1px solid #1b8354;
   color: #fff;
+}
+
+/* Validation */
+
+.form-field input.ng-invalid.ng-dirty,
+.form-field input.ng-invalid.ng-touched,
+.form-field select.ng-invalid.ng-dirty,
+.form-field select.ng-invalid.ng-touched {
+  border: 1px solid #d92d20 !important;
+  background: #fff5f5;
+}
+
+.mobile-input:has(input.ng-invalid.ng-dirty),
+.mobile-input:has(input.ng-invalid.ng-touched) {
+  border: 1px solid #d92d20 !important;
+  background: #fff5f5;
+}
+
+.mobile-input:has(input.ng-invalid.ng-dirty) input,
+.mobile-input:has(input.ng-invalid.ng-touched) input {
+  background: #fff5f5;
+}
+
+.error {
+  display: block;
+  color: #d92d20;
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 4px;
 }

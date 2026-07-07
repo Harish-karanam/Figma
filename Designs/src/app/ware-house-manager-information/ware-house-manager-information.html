@@ -1,7 +1,7 @@
 <div class="warehouse-form">
 
     <h2>Warehouse Manager Information
-        <button routerLink="/third-layout/additional-service">Additional service</button>
+        
     </h2>
 
     <p>Complete details below</p>
@@ -13,12 +13,11 @@
     <div class="form-group">
         <label>ID Types</label>
         <select formControlName="idTypes">
-            <option>Option</option>
-            <option *ngFor="let idTypes of IT "
-            [value]="IT">
-            {{idTypes}}
-            
-        </option>
+            <option value="">Option</option>
+
+<option *ngFor="let item of IT" [value]="item">
+  {{ item }}
+</option>
         </select>
          <small class="error" *ngIf="f['idTypes'].touched && f['idTypes'].errors?.['required']">
                           ID Type is required.
@@ -190,7 +189,7 @@
       <button type="button" class="draft-btn">Save a draft</button>
 
       <div class="right-actions">
-        <button type="button" class="previous-btn" >Previous</button>
+        <button type="button" class="previous-btn" routerLink="/third-layout/ware-house-dimensions" >Previous</button>
         <!-- <button type="submit" class="next-btn" (click)="next()" >Next</button> -->
         <button type="submit" class="next-btn">
     Next
