@@ -1,0 +1,135 @@
+.warehouse-form{
+    padding:32px;
+    background:#fff;
+}
+
+.warehouse-form h2{
+    margin:0;
+    font-size:32px;
+    font-weight:700;
+}
+
+.warehouse-form p{
+    margin-top:10px;
+    margin-bottom:32px;
+    color:#666;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+    margin-bottom:8px;
+    font-size:14px;
+    font-weight:500;
+}
+
+.form-group input,
+.form-group select{
+
+    height:44px;
+    border:1px solid #D6D6D6;
+    border-radius:4px;
+    padding:0 12px;
+    font-size:14px;
+    outline:none;
+}
+
+.button-row{
+
+    margin-top:40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.right-buttons{
+    display:flex;
+    gap:12px;
+}
+
+.draft-btn,
+.previous-btn{
+
+    border:1px solid #d8d8d8;
+    background:white;
+    padding:10px 20px;
+    border-radius:4px;
+    cursor:pointer;
+}
+
+.next-btn{
+
+    background:#00875A;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:4px;
+    cursor:pointer;
+}
+
+.error{
+    color:red;
+    font-size:12px;
+    margin-top:5px;
+    display:block;
+}
+
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched{
+
+    border:1px solid red;
+
+}
+
+input.ng-valid.ng-touched,
+select.ng-valid.ng-touched{
+
+    border:1px solid green;
+
+}
+
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 48px;
+  border: none;
+}
+
+
+.right-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.form-actions button {
+  height: 36px;
+  padding: 0 18px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.draft-btn,
+.previous-btn {
+  background: #fff;
+  color: #161616;
+  border: 1px solid #d2d6db;
+}
+
+.next-btn {
+  background: #1b8354;
+  color: #fff;
+  border: 1px solid #1b8354;
+}

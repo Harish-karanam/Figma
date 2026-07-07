@@ -1,16 +1,6 @@
 <div class="warehouse-page">
 
-  <div class="step-sidebar">
-    <div class="progress-line"></div>
-    <div class="step active"><span class="step-no">1</span><span>Warehouse Information</span></div>
-    <div class="step"><span class="step-no">2</span><span>Warehouse Identification &...</span></div>
-    <div class="step"><span class="step-no">3</span><span>Warehouse Ownership</span></div>
-    <div class="step"><span class="step-no">4</span><span>Warehouse Dimensions</span></div>
-    <div class="step"><span class="step-no">5</span><span>Warehouse Manager Inform...</span></div>
-    <div class="step"><span class="step-no">6</span><span>Bank Guarantee Information</span></div>
-    <div class="step"><span class="step-no">7</span><span>Additional Information</span></div>
-    <div class="step"><span class="step-no">8</span><span>Summary</span></div>
-  </div>
+ 
 
   <div class="warehouse-content">
 
@@ -60,7 +50,10 @@
 
         <div class="right-buttons">
           <button class="previous-btn">Previous</button>
-          <button class="next-btn" routerLink="/third-layout/form" style="cursor: pointer;">Next</button>
+          <!-- <button class="next-btn"routerLink="/third-layout/benefit-service" style="cursor: pointer;">Next</button> -->
+          <button type="submit" (click)="next()" class="next-btn">
+    Next
+</button>
         </div>
       </div>
 

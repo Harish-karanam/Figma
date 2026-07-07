@@ -36,6 +36,15 @@ import { Summary } from './summary/summary';
 import { AcknowledgementPopup } from './shared/acknowledgement-popup/acknowledgement-popup';
 import { Form } from './form/form';
 
+
+
+import { BenefitService } from './benefit-service/benefit-service';
+
+import { WareHouseDimensions } from './ware-house-dimensions/ware-house-dimensions';
+import { WareHouseManagerInformation } from './ware-house-manager-information/ware-house-manager-information';
+import { AdditionalService } from './additional-service/additional-service';
+import { ProgressIndicator } from './shared/progress-indicator/progress-indicator';
+
 @NgModule({
   declarations: [
     App,
@@ -48,20 +57,30 @@ import { Form } from './form/form';
     Footer,
     FloatingButton,
     Captcha,
+    MainContent,
+    MainContent3,
+    
+    
+    MainContent2,
+    Navbar3,
 
     MainLayout,
     SecondLayout,
     ThirdLayout,
 
-    MainContent,
-    MainContent2,
-    MainContent3,
 
     WarehouseInformation,
   
     BankInfo,
-    Summary
+    Summary,
+  
+    BenefitService,
+    WareHouseDimensions,
+    WareHouseManagerInformation,
+    AdditionalService,
+    ProgressIndicator,
   ],
+  
   imports: [
     BrowserModule,
     ReactiveFormsModule,
