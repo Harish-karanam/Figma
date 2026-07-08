@@ -62,7 +62,7 @@ export class WareHouseManagerInformation {
       grandFatherName:['',[Validators.required,
         Validators.minLength(4)
       ]],
-      mobileNo:['',Validators.required],
+      mobileNo:['',[Validators.required,Validators.minLength(10)]],
       email:['',Validators.required],
       
 

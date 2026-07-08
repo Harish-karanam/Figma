@@ -84,19 +84,58 @@
         </small>
       </div>
 
-      <div class="form-field mobile-field">
+      <!-- <div class="form-field mobile-field">
         <label>Mobile Number</label>
         <div class="mobile-input">
           <span>+966</span>
           <input type="text" formControlName="mobileNumber" placeholder="000000000">
         </div>
+
         <small class="error" *ngIf="warehouseOwnershipForm.get('mobileNumber')?.touched && warehouseOwnershipForm.get('mobileNumber')?.hasError('required')">
           Mobile number is required
         </small>
         <small class="error" *ngIf="warehouseOwnershipForm.get('mobileNumber')?.touched && warehouseOwnershipForm.get('mobileNumber')?.hasError('pattern')">
           Mobile number must contain only 9 digits
         </small>
-      </div>
+      </div> -->
+
+      <div class="form-field mobile-field">
+  <label>Mobile Number</label>
+
+  <div
+    class="mobile-input"
+    [ngClass]="{
+      'invalid-border': warehouseOwnershipForm.get('mobileNumber')?.invalid &&
+                        warehouseOwnershipForm.get('mobileNumber')?.touched,
+      'valid-border': warehouseOwnershipForm.get('mobileNumber')?.valid &&
+                      warehouseOwnershipForm.get('mobileNumber')?.touched
+    }"
+  >
+    <span>+966</span>
+
+    <input
+      type="text"
+      formControlName="mobileNumber"
+      placeholder="000000000"
+    />
+  </div>
+
+  <small
+    class="error"
+    *ngIf="warehouseOwnershipForm.get('mobileNumber')?.touched &&
+           warehouseOwnershipForm.get('mobileNumber')?.hasError('required')"
+  >
+    Mobile number is required
+  </small>
+
+  <small
+    class="error"
+    *ngIf="warehouseOwnershipForm.get('mobileNumber')?.touched &&
+           warehouseOwnershipForm.get('mobileNumber')?.hasError('pattern')"
+  >
+    Mobile number must contain only 9 digits
+  </small>
+</div>
 
       <div class="form-field">
         <label>Nationality of the Owner</label>
@@ -129,6 +168,10 @@
         <small class="error" *ngIf="warehouseOwnershipForm.get('ownerName')?.touched && warehouseOwnershipForm.get('ownerName')?.hasError('pattern')">
           Owner name must contain only letters
         </small>
+        <small class="error" *ngIf="warehouseOwnershipForm.get('ownerName')?.touched && warehouseOwnershipForm.get('ownerName')?.hasError('minlength')">
+          Owner name must contain minimum 4 characters
+        </small>
+        
       </div>
 
       <div class="form-field">
@@ -167,7 +210,7 @@
       <input type="file" accept=".jpg,.jpeg,.png,.pdf" (change)="onFileChange($event)">
 
       <small class="error" *ngIf="warehouseOwnershipForm.get('agreementFile')?.touched && warehouseOwnershipForm.get('agreementFile')?.hasError('required')">
-        Please upload the agreement
+        Please upload the file
       </small>
     </div>
 

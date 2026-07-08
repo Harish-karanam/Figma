@@ -102,7 +102,8 @@
       <div class="form-group">
         <label>Region/District</label>
 
-        <input type="text" placeholder="Entered text" formControlName="region" maxlength="20" />
+        <input type="text" placeholder="Entered text" formControlName="region" maxlength="20" 
+        (keypress)="lettersOnly($event)"/>
 
         <small class="error" *ngIf="f['region'].errors?.['required'] && f['region'].touched">
           Region is required.

@@ -29,7 +29,9 @@ export class Form implements OnInit {
       idType: ['', Validators.required],
       idNumber: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
       nationality: ['', [Validators.required, Validators.pattern(/^[A-Za-z ]+$/)]],
-      ownerName: ['', [Validators.required, Validators.pattern(/^[A-Za-z ]+$/)]],
+      ownerName: ['', [Validators.required, Validators.pattern(/^[A-Za-z ]+$/),
+        Validators.minLength(4)
+      ]],
       mobileNumber: ['', [Validators.required, Validators.pattern(/^[0-9]{9}$/)]],
       email: ['', [Validators.required, Validators.email]],
       leaseDate: ['', Validators.required],

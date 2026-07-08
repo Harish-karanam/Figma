@@ -79,6 +79,7 @@
   border: 1px solid #9da4ae;
   border-radius: 4px;
   overflow: hidden;
+  background: #fff;
 }
 
 .mobile-input span {
@@ -91,6 +92,7 @@
 .mobile-input input {
   flex: 1;
   border: none;
+  outline: none;
   height: 100%;
 }
 
@@ -166,16 +168,22 @@
     display:block;
 }
 
-input.ng-invalid.ng-touched,
-select.ng-invalid.ng-touched{
-
-    border:1px solid red;
-
+/* Validation */
+.mobile-input.invalid-border {
+  border: 1px solid red;
 }
 
-input.ng-valid.ng-touched,
-select.ng-valid.ng-touched{
-
-    border:1px solid green;
-
+.mobile-input.valid-border {
+  border: 1px solid green;
 }
+
+.form-field > input.ng-invalid.ng-touched,
+.form-field > select.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.form-field > input.ng-valid.ng-touched,
+.form-field > select.ng-valid.ng-touched {
+  border: 1px solid green;
+}
+
