@@ -1,4 +1,6 @@
-<form class="warehouse-form" [formGroup]="warehouseOwnershipForm" (ngSubmit)="onSubmit()">
+<div class="warehouse-page">
+  <div class="warehouse-content">
+  <form class="warehouse-form" [formGroup]="warehouseOwnershipForm" (ngSubmit)="onSubmit()">
 
   <div *ngIf="!showFullForm">
     <h2>Warehouse Ownership</h2>
@@ -23,7 +25,7 @@
 
       <div class="right-actions">
          <button type="button" class="previous-btn" routerLink="/third-layout/benefit-service"  >Previous</button>
-        <button type="submit" class="next-btn">Next</button>
+        <button type="submit" class="next-btn"  (click)="handleNext()">Next</button>
       </div>
     </div>
   </div>
@@ -219,9 +221,12 @@
 
       <div class="right-actions">
         <button type="button" class="previous-btn" routerLink="/third-layout/benefit-service"  >Previous</button>
-        <button type="submit" class="next-btn">Next</button>
+        <button type="submit" class="next-btn" >Next</button>
       </div>
     </div>
   </div>
 
 </form>
+</div>
+
+</div>

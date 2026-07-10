@@ -1,4 +1,5 @@
-<div class="warehouse-form">
+<!-- <div class="warehouse-page">
+  <div class="warehouse-content">
   <h2>Warehouse Manager Information</h2>
 
   <p>Complete details below</p>
@@ -53,9 +54,9 @@
         >
           Nationality Owner is required.
         </small>
-      </div>
-      <!-- //edit date format -->
-      <div class="form-group">
+      </div> -->
+<!-- //edit date format -->
+<!-- <div class="form-group">
         <label>Date of Hiring</label>
 
         <input
@@ -196,9 +197,9 @@
         >
           Grand Father Name must be minimum 4 characters.
         </small>
-      </div>
+      </div> -->
 
-      <!-- <div class="form-group">
+<!-- <div class="form-group">
         <label>Mobile Number</label>
 
         <div class="mobile-input">
@@ -220,7 +221,7 @@
         </small>
       </div> -->
 
-      <div class="form-group">
+<!-- <div class="form-group">
   <label>Mobile Number</label>
 
   <div
@@ -281,4 +282,272 @@
       </div>
     </div>
   </form>
+</div>
+
+</div> -->
+
+<div class="warehouse-page">
+  <div class="warehouse-content">
+    <form [formGroup]="warehousemanagerinformation" (ngSubmit)="next()" class="warehouse-form">
+      <h2>Warehouse Manager Information</h2>
+
+      <p>Complete details below</p>
+
+      <div class="form-grid">
+        <div class="form-field">
+          <label>ID Types</label>
+          <select formControlName="idTypes">
+            <option>Option</option>
+            <option *ngFor="let idTypes of IT" [value]="IT">
+              {{ idTypes }}
+            </option>
+          </select>
+          <small class="error" *ngIf="f['idTypes'].touched && f['idTypes'].errors?.['required']">
+            ID Type is required.
+          </small>
+        </div>
+
+        <div class="form-field">
+          <label>ID Number</label>
+
+          <input
+            type="text"
+            placeholder="Entered text"
+            formControlName="idNumber"
+            (keypress)="numbersOnly($event)"
+          />
+
+          <small class="error" *ngIf="f['idNumber'].touched && f['idNumber'].errors?.['required']">
+            ID Number is required.
+          </small>
+
+          <small class="error" *ngIf="f['idNumber'].touched && f['idNumber'].hasError('minlength')">
+            ID Number must be minimum 4 characters.
+          </small>
+        </div>
+
+        <div class="form-field">
+          <label>Nationality of Owner</label>
+
+          <select formControlName="nationalityOwner">
+            <option>Option</option>
+            <option *ngFor="let nationalityOwner of NO" [value]="nationalityOwner">
+              {{ nationalityOwner }}
+            </option>
+          </select>
+
+          <small
+            class="error"
+            *ngIf="f['nationalityOwner'].touched && f['nationalityOwner'].errors?.['required']"
+          >
+            Nationality Owner is required.
+          </small>
+        </div>
+
+        <div class="form-field">
+          <label>Date of Hiring</label>
+
+          <input
+            type="date"
+            placeholder="DD/MM/YYYY"
+            formControlName="dateOfHiring"
+            (keypress)="numbersOnly($event)"
+          />
+
+          <small
+            class="error"
+            *ngIf="f['dateOfHiring'].touched && f['dateOfHiring'].errors?.['required']"
+          >
+            Date of hiring is required.
+          </small>
+        </div>
+
+        <div class="form-field">
+          <label>Title</label>
+          <select formControlName="title">
+            <option>Option</option>
+            <option *ngFor="let title of TE" [value]="title">
+              {{ title }}
+            </option>
+          </select>
+          <small class="error" *ngIf="f['title'].touched && f['title'].errors?.['required']">
+            Title is required.
+          </small>
+        </div>
+
+        <div class="form-field">
+          <label>First Name</label>
+
+          <input
+            type="text"
+            placeholder="Entered text"
+            formControlName="firstName"
+            (keypress)="lettersOnly($event)"
+            maxlength="20"
+          />
+
+          <small
+            class="error"
+            *ngIf="f['firstName'].touched && f['firstName'].errors?.['required']"
+          >
+            First Name is required.
+          </small>
+
+          <small
+            class="error"
+            *ngIf="f['firstName'].touched && f['firstName'].hasError('minlength')"
+          >
+            First Name must be minimum 4 characters.
+          </small>
+        </div>
+
+        <div class="form-field">
+          <label>Surname</label>
+
+          <input
+            type="text"
+            placeholder="Entered text"
+            formControlName="surName"
+            (keypress)="lettersOnly($event)"
+          />
+
+          <small class="error" *ngIf="f['surName'].touched && f['surName'].errors?.['required']">
+            SurName is required.
+          </small>
+
+          <small class="error" *ngIf="f['surName'].touched && f['surName'].hasError('minlength')">
+            Sur Name must be minimum 4 characters.
+          </small>
+        </div>
+
+        <div class="form-field">
+          <label>Middle Name</label>
+
+          <input
+            type="text"
+            placeholder="Entered text"
+            formControlName="middleName"
+            (keypress)="lettersOnly($event)"
+          />
+
+          <small
+            class="error"
+            *ngIf="f['middleName'].touched && f['middleName'].errors?.['required']"
+          >
+            Middle Name is required.
+          </small>
+
+          <small
+            class="error"
+            *ngIf="f['middleName'].touched && f['middleName'].hasError('minlength')"
+          >
+            Middle Name must be minimum 4 characters.
+          </small>
+        </div>
+
+        <div class="form-field">
+          <label>Father's Name</label>
+
+          <input
+            type="text"
+            placeholder="Entered text"
+            formControlName="fatherName"
+            (keypress)="lettersOnly($event)"
+          />
+
+          <small
+            class="error"
+            *ngIf="f['fatherName'].touched && f['fatherName'].errors?.['required']"
+          >
+            Father Name is required.
+          </small>
+          <small
+            class="error"
+            *ngIf="f['fatherName'].touched && f['fatherName'].hasError('minlength')"
+          >
+            Father Name must be minimum 4 characters.
+          </small>
+        </div>
+
+        <div class="form-field">
+          <label>Grandfather's Name</label>
+
+          <input
+            type="text"
+            placeholder="Entered text"
+            formControlName="grandFatherName"
+            (keypress)="lettersOnly($event)"
+          />
+
+          <small
+            class="error"
+            *ngIf="f['grandFatherName'].touched && f['grandFatherName'].errors?.['required']"
+          >
+            Grand father Name is required.
+          </small>
+          <small
+            class="error"
+            *ngIf="f['grandFatherName'].touched && f['grandFatherName'].hasError('minlength')"
+          >
+            Grand Father Name must be minimum 4 characters.
+          </small>
+        </div>
+
+      <div class="form-field">
+  <label>Mobile Number</label>
+
+  <div class="mobile-input"
+    [class.invalid-border]="f['mobileNo'].touched && f['mobileNo'].invalid"
+    [class.valid-border]="f['mobileNo'].touched && f['mobileNo'].valid">
+
+    <div class="country-code">
+      <span class="country-text">+966</span>
+      <!-- <span class="arrow">&#9662;</span> -->
+    </div>
+
+    <input
+      type="text"
+      placeholder="000000000"
+      maxlength="10"
+      formControlName="mobileNo"
+      (keypress)="numbersOnly($event)"
+    />
+    
+  </div>
+
+  <small class="error" *ngIf="f['mobileNo'].touched && f['mobileNo'].errors?.['required']">
+    Mobile Number is required.
+  </small>
+  <small class="error" *ngIf="f['mobileNo'].touched && f['mobileNo'].errors?.['minlength']">
+    Mobile Number must be 10 digits.
+  </small>
+</div>
+
+      
+
+
+
+        <div class="form-field">
+          <label>Email</label>
+
+          <input type="email" placeholder="Entered text" formControlName="email" />
+
+          <small class="error" *ngIf="f['email'].touched && f['email'].errors?.['required']">
+            Email is required.
+          </small>
+        </div>
+      </div>
+      <div class="form-actions">
+      <button type="button" class="draft-btn">Save a draft</button>
+
+      <div class="right-actions">
+        <button type="button" class="previous-btn" routerLink="/third-layout/ware-house-dimensions">
+          Previous
+        </button>
+
+        <button type="submit" class="next-btn">Next</button>
+      </div>
+    </div>
+    </form>
+  </div>
 </div>
