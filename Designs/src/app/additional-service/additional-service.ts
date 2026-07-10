@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Stepper } from '../services/stepper';
 import { Router } from '@angular/router';
 import { ApplicationDataService } from '../services/application-data';
+import { SaveDraftPopupService } from '../services/save-draft-popup';
 
 
 @Component({
@@ -17,7 +18,8 @@ export class AdditionalService {
   constructor(private fb:FormBuilder,
     private stepper:Stepper,
   private router:Router,
- private applicationDataService: ApplicationDataService){
+ private applicationDataService: ApplicationDataService,
+private popupService: SaveDraftPopupService ){
     this.additionalService=this.fb.group({
 
         financiallySound: ['', Validators.required],
@@ -77,6 +79,9 @@ export class AdditionalService {
   );
 
   this.router.navigate(['/third-layout/summary']);
+}
+ saveDraft(): void {
+  this.popupService.open();
 }
 
 

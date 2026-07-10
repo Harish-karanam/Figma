@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Stepper } from '../services/stepper';
 import { Router } from '@angular/router';
 import { ApplicationDataService } from '../services/application-data';
+import { SaveDraftPopupService } from '../services/save-draft-popup';
 
 @Component({
   selector: 'app-ware-house-manager-information',
@@ -36,7 +37,8 @@ export class WareHouseManagerInformation {
   constructor(private fb: FormBuilder,
      private stepper:Stepper,
      private router:Router,
-     private applicationDataService: ApplicationDataService
+     private applicationDataService: ApplicationDataService,
+     private popupService: SaveDraftPopupService 
   ){
     this.warehousemanagerinformation=this.fb.group({
 
@@ -123,10 +125,7 @@ lettersOnly(event: KeyboardEvent): void {
       return this.warehousemanagerinformation.controls;
     }
 
-    saveDraft(){
-      console.log(this.warehousemanagerinformation.value);
-      
-    }
+   
 
     next(){
       if(this.warehousemanagerinformation.invalid){
@@ -146,4 +145,8 @@ lettersOnly(event: KeyboardEvent): void {
       this.router.navigate(['/third-layout/bank-info']);
       
     }
+
+     saveDraft(): void {
+  this.popupService.open();
+}
 }

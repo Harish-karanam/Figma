@@ -1,0 +1,31 @@
+<div class="popup-overlay" *ngIf="visible$ | async">
+
+  <div class="draft-popup">
+
+    <button
+      type="button"
+      class="popup-close"
+      (click)="closePopup()">
+      ×
+    </button>
+
+    <div class="success-icon">
+      ✓
+    </div>
+
+    <h2>Saved Successfully</h2>
+
+    <p>
+      Request for New Warehouse Application Form saved successfully.
+    </p>
+
+    <button
+      type="button"
+      class="popup-ok-btn"
+      (click)="closePopup()">
+      OK
+    </button>
+
+  </div>
+
+</div>

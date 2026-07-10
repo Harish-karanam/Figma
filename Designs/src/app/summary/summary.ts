@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApplicationDataService } from '../services/application-data';
 import { Stepper } from '../services/stepper';
+import { SaveDraftPopupService } from '../services/save-draft-popup';
 
 @Component({
   selector: 'app-summary',
@@ -12,7 +13,9 @@ export class Summary implements OnInit {
 
   data: any;
 
-  constructor(private applicationDataService: ApplicationDataService,private stepper:Stepper) {}
+  constructor(private applicationDataService: ApplicationDataService,private stepper:Stepper,
+    private popupService: SaveDraftPopupService 
+  ) {}
 
   ngOnInit() {
     this.data = this.applicationDataService.getData();
@@ -21,4 +24,8 @@ export class Summary implements OnInit {
     this.stepper.setStep(8)
     
   }
+
+  saveDraft(): void {
+  this.popupService.open();
+}
 }

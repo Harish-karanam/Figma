@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Stepper } from '../services/stepper';
 import { Router } from '@angular/router';
 import { ApplicationDataService } from '../services/application-data';
+import { SaveDraftPopupService } from '../services/save-draft-popup';
 
 @Component({
   selector: 'app-ware-house-dimensions',
@@ -14,7 +15,8 @@ export class WareHouseDimensions {
   warehouseDimension:FormGroup;
 
   constructor(private fb:FormBuilder,
-    private stepper:Stepper, private router:Router, private applicationDataService: ApplicationDataService
+    private stepper:Stepper, private router:Router, private applicationDataService: ApplicationDataService,
+    private popupService: SaveDraftPopupService 
   ){
     this.warehouseDimension=this.fb.group({
 
@@ -84,10 +86,7 @@ export class WareHouseDimensions {
       return this.warehouseDimension.controls;
     }
 
-    saveDraft(){
-      console.log(this.warehouseDimension.value);
-      
-    }
+   
 
     // next(){
     //   if(this.warehouseDimension.invalid){
@@ -114,5 +113,9 @@ export class WareHouseDimensions {
   );
 
   this.router.navigate(['/third-layout/ware-house-manager-information']);
+}
+
+ saveDraft(): void {
+  this.popupService.open();
 }
 }

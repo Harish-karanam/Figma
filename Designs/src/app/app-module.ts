@@ -114,6 +114,7 @@ import { WareHouseManagerInformation } from './ware-house-manager-information/wa
 import { AdditionalService } from './additional-service/additional-service';
 import { ProgressIndicator } from './shared/progress-indicator/progress-indicator';
 import { Summary } from './summary/summary';
+import { SaveDraftPopup } from './shared/save-draft-popup/save-draft-popup';
 
 @NgModule({
   declarations: [
@@ -147,6 +148,7 @@ import { Summary } from './summary/summary';
     AdditionalService,
     ProgressIndicator,
     Summary,
+    SaveDraftPopup,
   ],
 
   imports: [

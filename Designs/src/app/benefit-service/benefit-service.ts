@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Stepper } from '../services/stepper';
 import { Router } from '@angular/router';
 import { ApplicationDataService } from '../services/application-data';
+import { SaveDraftPopupService } from '../services/save-draft-popup';
 
 
 @Component({
@@ -23,7 +24,7 @@ export class BenefitService {
   ];
 
   constructor(private fb: FormBuilder,
-    private stepper:Stepper, private router:Router, private applicationDataService:ApplicationDataService
+    private stepper:Stepper, private router:Router, private applicationDataService:ApplicationDataService,private popupService: SaveDraftPopupService 
   ) {
 
     this.warehouseForm = this.fb.group({
@@ -127,11 +128,7 @@ lettersOnly(event: KeyboardEvent): void {
     return this.warehouseForm.controls;
   }
 
-  saveDraft() {
-
-    console.log(this.warehouseForm.value);
-
-  }
+  
 
  next() {
 
@@ -149,6 +146,10 @@ lettersOnly(event: KeyboardEvent): void {
 
   this.router.navigate(['/third-layout/form']);
 
+}
+
+ saveDraft(): void {
+  this.popupService.open();
 }
 
 }

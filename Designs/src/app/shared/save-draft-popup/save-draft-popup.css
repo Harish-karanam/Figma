@@ -1,0 +1,101 @@
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 24px;
+  background: rgba(13, 18, 28, 0.55);
+  box-sizing: border-box;
+}
+
+.draft-popup {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  padding: 32px 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-radius: 12px;
+  background: #ffffff;
+  box-sizing: border-box;
+  text-align: center;
+
+  font-family: "IBM Plex Sans Arabic", Arial, sans-serif;
+}
+
+.popup-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+
+  width: 32px;
+  height: 32px;
+  padding: 0;
+
+  border: none;
+  background: transparent;
+  color: #161616;
+
+  font-size: 30px;
+  line-height: 32px;
+  cursor: pointer;
+}
+
+.success-icon {
+  display: flex;
+  width: 52px;
+  height: 52px;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 20px;
+
+  border-radius: 50%;
+  background: #ecfdf3;
+  color: #1b8354;
+
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.draft-popup h2 {
+  margin: 0 0 12px;
+  color: #1f2a37;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.draft-popup p {
+  margin: 0 0 28px;
+  color: #4b5565;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.popup-ok-btn {
+  height: 40px;
+  padding: 0 18px;
+
+  border: 1px solid #1b8354;
+  border-radius: 4px;
+
+  background: #1b8354;
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.popup-ok-btn:hover {
+  background: #166b47;
+  border-color: #166b47;
+}

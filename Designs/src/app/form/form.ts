@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Router, RouterModule } from '@angular/router';
 import { Stepper } from '../services/stepper';
 import { ApplicationDataService } from '../services/application-data';
+import { SaveDraftPopupService } from '../services/save-draft-popup';
 
 @Component({
   selector: 'app-form',
@@ -21,7 +22,8 @@ export class Form implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private stepper: Stepper,
-    private applicationDataService: ApplicationDataService
+    private applicationDataService: ApplicationDataService,
+    private popupService: SaveDraftPopupService 
   ) {
     this.warehouseOwnershipForm = this.fb.group({
       leasedWarehouse: ['yes', Validators.required],
@@ -97,4 +99,8 @@ export class Form implements OnInit {
 
     this.router.navigate(['/third-layout/ware-house-dimensions']);
   }
+
+   saveDraft(): void {
+  this.popupService.open();
+}
 }

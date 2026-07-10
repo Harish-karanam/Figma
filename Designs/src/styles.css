@@ -2689,9 +2689,12 @@ flex-direction: column;
 align-items: flex-start;
 gap: var(--Global-spacing-4xl, 32px);
 flex-shrink: 0;
-padding:0 0 0 32px;
+padding: 32px;
+
+padding-top: 0px;
     background:#fff;
   font-family: "IBM Plex Sans Arabic", Arial, sans-serif;
+
  
 }
 
